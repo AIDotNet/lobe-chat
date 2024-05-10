@@ -40,63 +40,63 @@ const AgentTTS = memo(() => {
     [showAllLocaleVoice],
   );
 
-  const tts: ItemGroup = {
-    children: [
-      {
-        children: <Select options={ttsOptions} />,
-        desc: t('settingTTS.ttsService.desc'),
-        label: t('settingTTS.ttsService.title'),
-        name: [TTS_SETTING_KEY, 'ttsService'],
-      },
-      {
-        children: <Switch />,
-        desc: t('settingTTS.showAllLocaleVoice.desc'),
-        hidden: ttsService === 'openai',
-        label: t('settingTTS.showAllLocaleVoice.title'),
-        minWidth: undefined,
-        name: [TTS_SETTING_KEY, 'showAllLocaleVoice'],
-        valuePropName: 'checked',
-      },
-      {
-        children: <SelectWithTTSPreview options={openaiVoiceOptions} server={'openai'} />,
-        desc: t('settingTTS.voice.desc'),
-        hidden: ttsService !== 'openai',
-        label: t('settingTTS.voice.title'),
-        name: [TTS_SETTING_KEY, 'voice', 'openai'],
-      },
-      {
-        children: <SelectWithTTSPreview options={edgeVoiceOptions} server={'edge'} />,
-        desc: t('settingTTS.voice.desc'),
-        divider: false,
-        hidden: ttsService !== 'edge',
-        label: t('settingTTS.voice.title'),
-        name: [TTS_SETTING_KEY, 'voice', 'edge'],
-      },
-      {
-        children: <SelectWithTTSPreview options={microsoftVoiceOptions} server={'microsoft'} />,
-        desc: t('settingTTS.voice.desc'),
-        divider: false,
-        hidden: ttsService !== 'microsoft',
-        label: t('settingTTS.voice.title'),
-        name: [TTS_SETTING_KEY, 'voice', 'microsoft'],
-      },
-      {
-        children: (
-          <Select
-            options={[
-              { label: t('settingTheme.lang.autoMode'), value: 'auto' },
-              ...(localeOptions || []),
-            ]}
-          />
-        ),
-        desc: t('settingTTS.sttLocale.desc'),
-        label: t('settingTTS.sttLocale.title'),
-        name: [TTS_SETTING_KEY, 'sttLocale'],
-      },
-    ],
-    icon: Mic,
-    title: t('settingTTS.title'),
-  };
+  // const tts: ItemGroup = {
+  //   children: [
+  //     {
+  //       children: <Select options={ttsOptions} />,
+  //       desc: t('settingTTS.ttsService.desc'),
+  //       label: t('settingTTS.ttsService.title'),
+  //       name: [TTS_SETTING_KEY, 'ttsService'],
+  //     },
+  //     {
+  //       children: <Switch />,
+  //       desc: t('settingTTS.showAllLocaleVoice.desc'),
+  //       hidden: ttsService === 'openai',
+  //       label: t('settingTTS.showAllLocaleVoice.title'),
+  //       minWidth: undefined,
+  //       name: [TTS_SETTING_KEY, 'showAllLocaleVoice'],
+  //       valuePropName: 'checked',
+  //     },
+  //     {
+  //       children: <SelectWithTTSPreview options={openaiVoiceOptions} server={'openai'} />,
+  //       desc: t('settingTTS.voice.desc'),
+  //       hidden: ttsService !== 'openai',
+  //       label: t('settingTTS.voice.title'),
+  //       name: [TTS_SETTING_KEY, 'voice', 'openai'],
+  //     },
+  //     {
+  //       children: <SelectWithTTSPreview options={edgeVoiceOptions} server={'edge'} />,
+  //       desc: t('settingTTS.voice.desc'),
+  //       divider: false,
+  //       hidden: ttsService !== 'edge',
+  //       label: t('settingTTS.voice.title'),
+  //       name: [TTS_SETTING_KEY, 'voice', 'edge'],
+  //     },
+  //     {
+  //       children: <SelectWithTTSPreview options={microsoftVoiceOptions} server={'microsoft'} />,
+  //       desc: t('settingTTS.voice.desc'),
+  //       divider: false,
+  //       hidden: ttsService !== 'microsoft',
+  //       label: t('settingTTS.voice.title'),
+  //       name: [TTS_SETTING_KEY, 'voice', 'microsoft'],
+  //     },
+  //     {
+  //       children: (
+  //         <Select
+  //           options={[
+  //             { label: t('settingTheme.lang.autoMode'), value: 'auto' },
+  //             ...(localeOptions || []),
+  //           ]}
+  //         />
+  //       ),
+  //       desc: t('settingTTS.sttLocale.desc'),
+  //       label: t('settingTTS.sttLocale.title'),
+  //       name: [TTS_SETTING_KEY, 'sttLocale'],
+  //     },
+  //   ],
+  //   icon: Mic,
+  //   title: t('settingTTS.title'),
+  // };
 
   return (
     <Form
@@ -110,7 +110,9 @@ const AgentTTS = memo(() => {
           },
         },
       }}
-      items={[tts]}
+      items={[
+        // tts
+      ]}
       itemsType={'group'}
       onValuesChange={debounce(updateConfig, 100)}
       variant={'pure'}

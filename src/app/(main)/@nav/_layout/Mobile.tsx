@@ -34,7 +34,7 @@ const Nav = memo(() => {
   const items: MobileTabBarProps['items'] = useMemo(
     () => [
       {
-        icon: (active) => (
+        icon: (active:any) => (
           <Icon className={active ? styles.active : undefined} icon={MessageSquare} />
         ),
         key: SidebarTabKey.Chat,
@@ -44,15 +44,7 @@ const Nav = memo(() => {
         title: t('tab.chat'),
       },
       {
-        icon: (active) => <Icon className={active ? styles.active : undefined} icon={Compass} />,
-        key: SidebarTabKey.Market,
-        onClick: () => {
-          router.push('/market');
-        },
-        title: t('tab.market'),
-      },
-      {
-        icon: (active) => <Icon className={active ? styles.active : undefined} icon={User} />,
+        icon: (active:any) => <Icon className={active ? styles.active : undefined} icon={User} />,
         key: SidebarTabKey.Me,
         onClick: () => {
           router.push('/me');

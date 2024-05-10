@@ -25,14 +25,14 @@ const ShareButton = memo<ShareButtonProps>(({ mobile, setOpen, open }) => {
 
   return (
     <>
-      <ActionIcon
+      {/* <ActionIcon
         icon={Share2}
         loading={shareLoading}
         onClick={() => setIsModalOpen(true)}
         size={mobile ? MOBILE_HEADER_ICON_SIZE : DESKTOP_HEADER_ICON_SIZE}
         title={t('share')}
-      />
-      <ShareModal onCancel={() => setIsModalOpen(false)} open={isModalOpen} />
+      /> */}
+      {/* <ShareModal onCancel={() => setIsModalOpen(false)} open={isModalOpen} /> */}
     </>
   );
 });

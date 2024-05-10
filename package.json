@@ -14,13 +14,13 @@
     "tts",
     "stt"
   ],
-  "homepage": "https://github.com/AIDotNet/lobe-chat",
+  "homepage": "https://github.com/AIDotNet/fast-wiki",
   "bugs": {
-    "url": "https://github.com/AIDotNet/lobe-chat/issues/new/choose"
+    "url": "https://github.com/AIDotNet/fast-wiki/issues/new/choose"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AIDotNet/lobe-chat.git"
+    "url": "https://github.com/AIDotNet/fast-wiki.git"
   },
   "license": "MIT",
   "author": "AIDotNet <i@lobehub.com>",

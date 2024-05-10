@@ -17,6 +17,7 @@ const Layout = memo<LayoutProps>(({ children, nav }) => {
       height={'100%'}
       horizontal
       style={{
+        // @ts-ignore
         borderTop: isPWA ? `1px solid ${theme.colorBorder}` : undefined,
         position: 'relative',
       }}

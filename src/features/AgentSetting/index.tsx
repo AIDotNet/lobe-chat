@@ -17,7 +17,7 @@ const AgentSettings = (props: AgentSettingsProps) => {
       <AgentMeta />
       <AgentChat />
       <AgentModal />
-      <AgentTTS />
+      {/* <AgentTTS /> */}
       <AgentPlugin />
     </Provider>
   );
