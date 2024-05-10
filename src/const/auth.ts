@@ -30,10 +30,5 @@ export interface JWTPayload {
    */
   endpoint?: string;
 
-  azureApiVersion?: string;
-
-  awsAccessKeyId?: string;
-  awsRegion?: string;
-  awsSecretAccessKey?: string;
 }
 /* eslint-enable */

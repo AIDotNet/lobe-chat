@@ -96,66 +96,6 @@ export function initializeWithClientStore(provider: string, payload: any) {
       };
       break;
     }
-    case ModelProvider.Azure: {
-      providerOptions = {
-        apiVersion: providerAuthPayload?.azureApiVersion,
-        // That's a wired properity, but just remapped it
-        apikey: providerAuthPayload?.apiKey,
-      };
-      break;
-    }
-    case ModelProvider.ZhiPu: {
-      break;
-    }
-    case ModelProvider.Google: {
-      providerOptions = {
-        baseURL: providerAuthPayload?.endpoint,
-      };
-      break;
-    }
-    case ModelProvider.Moonshot: {
-      break;
-    }
-    case ModelProvider.Bedrock: {
-      if (providerAuthPayload?.apiKey) {
-        providerOptions = {
-          accessKeyId: providerAuthPayload?.awsAccessKeyId,
-          accessKeySecret: providerAuthPayload?.awsSecretAccessKey,
-          region: providerAuthPayload?.awsRegion,
-        };
-      }
-      break;
-    }
-    case ModelProvider.Ollama: {
-      providerOptions = {
-        baseURL: providerAuthPayload?.endpoint,
-      };
-      break;
-    }
-    case ModelProvider.Perplexity: {
-      break;
-    }
-    case ModelProvider.Anthropic: {
-      providerOptions = {
-        baseURL: providerAuthPayload?.endpoint,
-      };
-      break;
-    }
-    case ModelProvider.Mistral: {
-      break;
-    }
-    case ModelProvider.Groq: {
-      break;
-    }
-    case ModelProvider.OpenRouter: {
-      break;
-    }
-    case ModelProvider.TogetherAI: {
-      break;
-    }
-    case ModelProvider.ZeroOne: {
-      break;
-    }
   }
 
   /**

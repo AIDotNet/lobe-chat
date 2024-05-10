@@ -22,21 +22,5 @@ export interface CreateChatCompletionOptions {
 }
 
 export enum ModelProvider {
-  Anthropic = 'anthropic',
-  Azure = 'azure',
-  Bedrock = 'bedrock',
-  ChatGLM = 'chatglm',
-  Google = 'google',
-  Groq = 'groq',
-  Minimax = 'minimax',
-  Mistral = 'mistral',
-  Moonshot = 'moonshot',
-  Ollama = 'ollama',
   OpenAI = 'openai',
-  OpenRouter = 'openrouter',
-  Perplexity = 'perplexity',
-  TogetherAI = 'togetherai',
-  Tongyi = 'tongyi',
-  ZeroOne = 'zeroone',
-  ZhiPu = 'zhipu',
 }
