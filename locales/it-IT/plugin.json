@@ -68,7 +68,7 @@
         "pattenErrorMessage": "Puoi inserire solo caratteri alfanumerici, - e _"
       },
       "manifest": {
-        "desc": "LobeChat installerà il plugin da questo collegamento",
+        "desc": "FastWki-Chat installerà il plugin da questo collegamento",
         "label": "URL del file di descrizione del plugin (Manifest)",
         "preview": "Anteprima Manifest",
         "refresh": "Aggiorna"
@@ -101,7 +101,7 @@
       "edit": "Modifica plugin personalizzato"
     },
     "type": {
-      "lobe": "Plugin LobeChat",
+      "lobe": "Plugin FastWki-Chat",
       "openai": "Plugin OpenAI"
     },
     "update": "Aggiorna",

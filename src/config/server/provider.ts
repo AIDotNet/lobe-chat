@@ -135,19 +135,19 @@ export const getProviderConfig = () => {
 
   if (process.env.CUSTOM_MODELS) {
     console.warn(
-      'DEPRECATED: `CUSTOM_MODELS` is deprecated, please use `OPENAI_MODEL_LIST` instead, we will remove `CUSTOM_MODELS` in the LobeChat 1.0',
+      'DEPRECATED: `CUSTOM_MODELS` is deprecated, please use `OPENAI_MODEL_LIST` instead, we will remove `CUSTOM_MODELS` in the FastWki-Chat 1.0',
     );
   }
 
   if (process.env.OLLAMA_CUSTOM_MODELS) {
     console.warn(
-      'DEPRECATED: `OLLAMA_CUSTOM_MODELS` is deprecated, please use `OLLAMA_MODEL_LIST` instead, we will remove `OLLAMA_CUSTOM_MODELS` in the LobeChat 1.0',
+      'DEPRECATED: `OLLAMA_CUSTOM_MODELS` is deprecated, please use `OLLAMA_MODEL_LIST` instead, we will remove `OLLAMA_CUSTOM_MODELS` in the FastWki-Chat 1.0',
     );
   }
 
   if (process.env.OPENROUTER_CUSTOM_MODELS) {
     console.warn(
-      'DEPRECATED: `OPENROUTER_CUSTOM_MODELS` is deprecated, please use `OPENROUTER_MODEL_LIST` instead, we will remove `OPENROUTER_CUSTOM_MODELS` in the LobeChat 1.0',
+      'DEPRECATED: `OPENROUTER_CUSTOM_MODELS` is deprecated, please use `OPENROUTER_MODEL_LIST` instead, we will remove `OPENROUTER_CUSTOM_MODELS` in the FastWki-Chat 1.0',
     );
   }
 

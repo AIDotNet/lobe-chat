@@ -1,7 +1,7 @@
 {
   "about": "關於",
   "advanceSettings": "進階設定",
-  "appInitializing": "LobeChat 初始化中，請耐心等候...",
+  "appInitializing": "FastWki-Chat 初始化中，請耐心等候...",
   "autoGenerate": "自動生成",
   "autoGenerateTooltip": "基於提示詞自動生成助手描述",
   "autoGenerateTooltipDisabled": "請填寫提示詞後使用自動補全功能",
@@ -154,9 +154,9 @@
   "telemetry": {
     "allow": "允許",
     "deny": "拒絕",
-    "desc": "我們希望匿名獲取你的使用信息，進而幫助我們改進 LobeChat，並為你提供更好的產品體驗。你可以在「設定」 - 「關於」隨時關閉。",
+    "desc": "我們希望匿名獲取你的使用信息，進而幫助我們改進 FastWki-Chat，並為你提供更好的產品體驗。你可以在「設定」 - 「關於」隨時關閉。",
     "learnMore": "了解更多",
-    "title": "幫助 LobeChat 做得更好"
+    "title": "幫助 FastWki-Chat 做得更好"
   },
   "temp": "臨時",
   "terms": "服務條款",

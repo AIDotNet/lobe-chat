@@ -101,7 +101,7 @@
       "edit": "사용자 정의 플러그인 편집"
     },
     "type": {
-      "lobe": "LobeChat 플러그인",
+      "lobe": "FastWki-Chat 플러그인",
       "openai": "OpenAI 플러그인"
     },
     "update": "업데이트",

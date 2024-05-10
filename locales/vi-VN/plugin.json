@@ -68,7 +68,7 @@
         "pattenErrorMessage": "Chỉ có thể nhập ký tự tiếng Anh, số, - và _"
       },
       "manifest": {
-        "desc": "LobeChat sẽ cài đặt plugin thông qua liên kết này",
+        "desc": "FastWki-Chat sẽ cài đặt plugin thông qua liên kết này",
         "label": "Tệp mô tả plugin (Manifest) URL",
         "preview": "Xem trước Manifest",
         "refresh": "Làm mới"
@@ -101,7 +101,7 @@
       "edit": "Chỉnh sửa plugin tùy chỉnh"
     },
     "type": {
-      "lobe": "Plugin LobeChat",
+      "lobe": "Plugin FastWki-Chat",
       "openai": "Plugin OpenAI"
     },
     "update": "Cập nhật",

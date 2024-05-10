@@ -52,27 +52,27 @@ describe('UserAvatar', () => {
       expect(screen.getByAltText('testuser')).toHaveAttribute('src', DEFAULT_USER_AVATAR_URL);
     });
 
-    it('should show LobeChat and default avatar when the user is not logged in and enable auth', () => {
+    it('should show FastWki-Chat and default avatar when the user is not logged in and enable auth', () => {
       act(() => {
         useUserStore.setState({ isSignedIn: false, user: undefined });
       });
 
       render(<UserAvatar />);
-      expect(screen.getByAltText('LobeChat')).toBeInTheDocument();
-      expect(screen.getByAltText('LobeChat')).toHaveAttribute('src', DEFAULT_USER_AVATAR_URL);
+      expect(screen.getByAltText('FastWki-Chat')).toBeInTheDocument();
+      expect(screen.getByAltText('FastWki-Chat')).toHaveAttribute('src', DEFAULT_USER_AVATAR_URL);
     });
   });
 
   describe('disable Auth', () => {
-    it('should show LobeChat and default avatar when the user is not logged in and disabled auth', () => {
+    it('should show FastWki-Chat and default avatar when the user is not logged in and disabled auth', () => {
       enableAuth = false;
       act(() => {
         useUserStore.setState({ isSignedIn: false, user: undefined });
       });
 
       render(<UserAvatar />);
-      expect(screen.getByAltText('LobeChat')).toBeInTheDocument();
-      expect(screen.getByAltText('LobeChat')).toHaveAttribute('src', DEFAULT_USER_AVATAR_URL);
+      expect(screen.getByAltText('FastWki-Chat')).toBeInTheDocument();
+      expect(screen.getByAltText('FastWki-Chat')).toHaveAttribute('src', DEFAULT_USER_AVATAR_URL);
     });
   });
 });

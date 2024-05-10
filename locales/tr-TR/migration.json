@@ -10,7 +10,7 @@
     "clear": {
       "confirm": "Yerel verileri temizlemek üzeresiniz (global ayarlar etkilenmeyecek). Lütfen yedeği indirdiğinizi onaylayın."
     },
-    "description": "Yeni sürümde, LobeChat'in veri arttı. Bu nedenle, size daha iyi bir kullanıcı deneyimi sunmak için eski sürüm verilerini yükseltmemiz gerekiyor.",
+    "description": "Yeni sürümde, FastWki-Chat'in veri arttı. Bu nedenle, size daha iyi bir kullanıcı deneyimi sunmak için eski sürüm verilerini yükseltmemiz gerekiyor.",
     "features": {
       "capability": {
         "desc": "IndexedDB teknolojisine ile ömür boyu konuşma mesajları depolayabilir.",
@@ -25,18 +25,18 @@
         "title": "Daha Kullanıcı Dostu"
       }
     },
-    "title": "LobeChat Data Evolution",
+    "title": "FastWki-Chat Data Evolution",
     "upgrade": {
       "error": {
         "subTitle": "Üzgünüz, veritabanı yükseltme işlemi sırasında bir hata oluştu. Lütfen şu çözümleri deneyin: A. Yerel verileri temizleyin ve yedek verileri yeniden içe aktarın; B. 'Yükseltmeyi Yeniden Dene' düğmesine tıklayın.<br><br> Sorun devam ederse, lütfen <1>bir istek gönderin</1>, en kısa sürede size yardımcı olacağız.",
         "title": "Veritabanı Yükseltmesi Başarısız Oldu"
       },
       "success": {
-        "subTitle": "LobeChat'in veritabanı en son sürüme başarıyla yükseltildi. Şimdi deneyimlemeye başlayın!",
+        "subTitle": "FastWki-Chat'in veritabanı en son sürüme başarıyla yükseltildi. Şimdi deneyimlemeye başlayın!",
         "title": "Veritabanı Yükseltmesi Başarılı"
       }
     },
-    "upgradeTip": "Yükseltme işlemi yaklaşık 10 ila 20 saniye sürecektir. Lütfen yükseltme sırasında LobeChat'i kapatmayın."
+    "upgradeTip": "Yükseltme işlemi yaklaşık 10 ila 20 saniye sürecektir. Lütfen yükseltme sırasında FastWki-Chat'i kapatmayın."
   },
   "migrateError": {
     "missVersion": "İçe aktarılan verilerde bir sürüm numarası eksik. Lütfen dosyayı kontrol edin ve tekrar deneyin.",

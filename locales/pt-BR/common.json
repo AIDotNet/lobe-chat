@@ -1,7 +1,7 @@
 {
   "about": "Sobre",
   "advanceSettings": "Configurações avançadas",
-  "appInitializing": "LobeChat inicializando, por favor aguarde...",
+  "appInitializing": "FastWki-Chat inicializando, por favor aguarde...",
   "autoGenerate": "Auto completar",
   "autoGenerateTooltip": "Auto completar descrição do assistente com base em sugestões",
   "autoGenerateTooltipDisabled": "Por favor, preencha a dica antes de usar a função de preenchimento automático",
@@ -154,9 +154,9 @@
   "telemetry": {
     "allow": "Permitir",
     "deny": "Negar",
-    "desc": "Queremos coletar anonimamente suas informações de uso para nos ajudar a melhorar o LobeChat e oferecer uma experiência de produto melhor para você. Você pode desativar a qualquer momento em Configurações - Sobre.",
+    "desc": "Queremos coletar anonimamente suas informações de uso para nos ajudar a melhorar o FastWki-Chat e oferecer uma experiência de produto melhor para você. Você pode desativar a qualquer momento em Configurações - Sobre.",
     "learnMore": "Saiba mais",
-    "title": "Ajude o LobeChat a melhorar"
+    "title": "Ajude o FastWki-Chat a melhorar"
   },
   "temp": "Temporário",
   "terms": "Termos de Serviço",

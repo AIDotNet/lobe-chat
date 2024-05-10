@@ -68,7 +68,7 @@
         "pattenErrorMessage": "Sadece İngilizce karakterler, sayılar, - ve _ kullanılabilir"
       },
       "manifest": {
-        "desc": "LobeChat, eklentiyi bu bağlantı üzerinden yükleyecek",
+        "desc": "FastWki-Chat, eklentiyi bu bağlantı üzerinden yükleyecek",
         "label": "Eklenti Tanım Dosyası (Manifest) URL'si",
         "preview": "Manifesti Önizle",
         "refresh": "Yenile"
@@ -101,7 +101,7 @@
       "edit": "Özel Eklentiyi Düzenle"
     },
     "type": {
-      "lobe": "LobeChat Eklentisi",
+      "lobe": "FastWki-Chat Eklentisi",
       "openai": "OpenAI Eklentisi"
     },
     "update": "Güncelle",

@@ -4,7 +4,7 @@
   },
   "analytics": {
     "telemetry": {
-      "desc": "Durch das Senden von Telemetriedaten können Sie uns dabei helfen, die Gesamtnutzererfahrung von LobeChat zu verbessern",
+      "desc": "Durch das Senden von Telemetriedaten können Sie uns dabei helfen, die Gesamtnutzererfahrung von FastWki-Chat zu verbessern",
       "title": "Anonyme Nutzungsdaten senden"
     },
     "title": "Analytics"
@@ -56,11 +56,11 @@
           "title": "Modellanzeigename"
         },
         "files": {
-          "extra": "Die aktuelle Implementierung des Datei-Uploads in LobeChat ist nur eine Hack-Lösung und nur für eigene Versuche gedacht. Die vollständige Datei-Upload-Funktion wird in zukünftigen Versionen implementiert.",
+          "extra": "Die aktuelle Implementierung des Datei-Uploads in FastWki-Chat ist nur eine Hack-Lösung und nur für eigene Versuche gedacht. Die vollständige Datei-Upload-Funktion wird in zukünftigen Versionen implementiert.",
           "title": "Datei-Upload unterstützen"
         },
         "functionCall": {
-          "extra": "Diese Konfiguration aktiviert nur die Funktion zum Aufrufen von Funktionen in LobeChat. Die Unterstützung von Funktionsaufrufen hängt vollständig von dem Modell selbst ab. Bitte testen Sie die Verfügbarkeit der Funktionsaufrufe des Modells selbst.",
+          "extra": "Diese Konfiguration aktiviert nur die Funktion zum Aufrufen von Funktionen in FastWki-Chat. Die Unterstützung von Funktionsaufrufen hängt vollständig von dem Modell selbst ab. Bitte testen Sie die Verfügbarkeit der Funktionsaufrufe des Modells selbst.",
           "title": "Funktionsaufrufe unterstützen"
         },
         "id": {
@@ -74,7 +74,7 @@
           "unlimited": "unbegrenzt"
         },
         "vision": {
-          "extra": "Diese Konfiguration aktiviert nur die Bild-Upload-Konfiguration in LobeChat. Die Unterstützung der Erkennung hängt vollständig von dem Modell selbst ab. Bitte testen Sie die Verfügbarkeit der visuellen Erkennungsfähigkeiten des Modells selbst.",
+          "extra": "Diese Konfiguration aktiviert nur die Bild-Upload-Konfiguration in FastWki-Chat. Die Unterstützung der Erkennung hängt vollständig von dem Modell selbst ab. Bitte testen Sie die Verfügbarkeit der visuellen Erkennungsfähigkeiten des Modells selbst.",
           "title": "Visuelle Erkennung unterstützen"
         }
       }

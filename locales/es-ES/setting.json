@@ -4,7 +4,7 @@
   },
   "analytics": {
     "telemetry": {
-      "desc": "Al seleccionar el envío de datos de telemetría, nos ayudas a mejorar la experiencia general del usuario de LobeChat",
+      "desc": "Al seleccionar el envío de datos de telemetría, nos ayudas a mejorar la experiencia general del usuario de FastWki-Chat",
       "title": "Enviar datos de uso anónimos"
     },
     "title": "Análisis de datos"
@@ -56,11 +56,11 @@
           "title": "Nombre de visualización del modelo"
         },
         "files": {
-          "extra": "La carga de archivos actual en LobeChat es solo una solución provisional. Por favor, espera a futuras actualizaciones para una funcionalidad completa de carga de archivos.",
+          "extra": "La carga de archivos actual en FastWki-Chat es solo una solución provisional. Por favor, espera a futuras actualizaciones para una funcionalidad completa de carga de archivos.",
           "title": "Soporte de carga de archivos"
         },
         "functionCall": {
-          "extra": "Esta configuración solo habilitará la capacidad de llamada a funciones en LobeChat. La compatibilidad con las llamadas a funciones depende completamente del modelo en sí. Por favor, realiza pruebas para verificar la disponibilidad de esta capacidad en el modelo.",
+          "extra": "Esta configuración solo habilitará la capacidad de llamada a funciones en FastWki-Chat. La compatibilidad con las llamadas a funciones depende completamente del modelo en sí. Por favor, realiza pruebas para verificar la disponibilidad de esta capacidad en el modelo.",
           "title": "Soporte de llamadas a funciones"
         },
         "id": {
@@ -74,7 +74,7 @@
           "unlimited": "ilimitado"
         },
         "vision": {
-          "extra": "Esta configuración solo habilitará la configuración de carga de imágenes en LobeChat. La capacidad de reconocimiento depende completamente del modelo en sí. Por favor, realiza pruebas para verificar la disponibilidad de esta capacidad en el modelo.",
+          "extra": "Esta configuración solo habilitará la configuración de carga de imágenes en FastWki-Chat. La capacidad de reconocimiento depende completamente del modelo en sí. Por favor, realiza pruebas para verificar la disponibilidad de esta capacidad en el modelo.",
           "title": "Soporte de reconocimiento visual"
         }
       }

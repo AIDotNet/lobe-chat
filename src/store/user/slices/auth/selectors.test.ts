@@ -76,7 +76,7 @@ describe('userProfileSelectors', () => {
         user: null,
       } as unknown as UserStore;
 
-      expect(userProfileSelectors.username(store)).toBe('LobeChat');
+      expect(userProfileSelectors.username(store)).toBe('FastWki-Chat');
     });
 
     it('should return user username when signed in', () => {

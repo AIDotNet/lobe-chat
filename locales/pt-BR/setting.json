@@ -4,7 +4,7 @@
   },
   "analytics": {
     "telemetry": {
-      "desc": "Ao optar por enviar dados de telemetria, você pode nos ajudar a melhorar a experiência do usuário do LobeChat como um todo",
+      "desc": "Ao optar por enviar dados de telemetria, você pode nos ajudar a melhorar a experiência do usuário do FastWki-Chat como um todo",
       "title": "Enviar dados de uso anônimo"
     },
     "title": "Análise de dados"
@@ -56,11 +56,11 @@
           "title": "Nome de Exibição do Modelo"
         },
         "files": {
-          "extra": "A implementação atual de upload de arquivos do LobeChat é apenas uma solução temporária. Aguarde a implementação completa de capacidade de upload de arquivos no futuro.",
+          "extra": "A implementação atual de upload de arquivos do FastWki-Chat é apenas uma solução temporária. Aguarde a implementação completa de capacidade de upload de arquivos no futuro.",
           "title": "Suporte a Upload de Arquivos"
         },
         "functionCall": {
-          "extra": "Esta configuração ativará apenas a capacidade de chamada de função no LobeChat. A capacidade de suporte à chamada de função depende inteiramente do modelo em si. Por favor, teste a disponibilidade da capacidade de chamada de função deste modelo.",
+          "extra": "Esta configuração ativará apenas a capacidade de chamada de função no FastWki-Chat. A capacidade de suporte à chamada de função depende inteiramente do modelo em si. Por favor, teste a disponibilidade da capacidade de chamada de função deste modelo.",
           "title": "Suporte a Chamada de Função"
         },
         "id": {
@@ -74,7 +74,7 @@
           "unlimited": "ilimitado"
         },
         "vision": {
-          "extra": "Esta configuração ativará apenas a configuração de upload de imagens no LobeChat. A capacidade de reconhecimento depende inteiramente do modelo em si. Por favor, teste a disponibilidade da capacidade de reconhecimento visual deste modelo.",
+          "extra": "Esta configuração ativará apenas a configuração de upload de imagens no FastWki-Chat. A capacidade de reconhecimento depende inteiramente do modelo em si. Por favor, teste a disponibilidade da capacidade de reconhecimento visual deste modelo.",
           "title": "Suporte a Reconhecimento Visual"
         }
       }

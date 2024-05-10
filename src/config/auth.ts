@@ -52,13 +52,13 @@ declare global {
 export const getAuthConfig = () => {
   if (process.env.ENABLE_OAUTH_SSO) {
     console.warn(
-      '`ENABLE_OAUTH_SSO` is deprecated and will be removed in LobeChat 1.0. just set `NEXT_AUTH_SECRET` enough',
+      '`ENABLE_OAUTH_SSO` is deprecated and will be removed in FastWki-Chat 1.0. just set `NEXT_AUTH_SECRET` enough',
     );
   }
 
   if (process.env.SSO_PROVIDERS) {
     console.warn(
-      '`SSO_PROVIDERS` is deprecated and will be removed in LobeChat 1.0. Please replace with `NEXT_AUTH_SSO_PROVIDERS`',
+      '`SSO_PROVIDERS` is deprecated and will be removed in FastWki-Chat 1.0. Please replace with `NEXT_AUTH_SSO_PROVIDERS`',
     );
   }
 

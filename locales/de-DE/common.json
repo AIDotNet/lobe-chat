@@ -1,7 +1,7 @@
 {
   "about": "Über",
   "advanceSettings": "Erweiterte Einstellungen",
-  "appInitializing": "LobeChat wird initialisiert. Bitte haben Sie einen Moment Geduld...",
+  "appInitializing": "FastWki-Chat wird initialisiert. Bitte haben Sie einen Moment Geduld...",
   "autoGenerate": "Automatisch generieren",
   "autoGenerateTooltip": "Assistentenbeschreibung automatisch auf Basis von Vorschlägen vervollständigen",
   "autoGenerateTooltipDisabled": "Bitte geben Sie einen Hinweis ein, um die automatische Vervollständigung zu aktivieren",
@@ -154,9 +154,9 @@
   "telemetry": {
     "allow": "Erlauben",
     "deny": "Verweigern",
-    "desc": "Wir möchten anonyme Nutzungsdaten sammeln, um uns bei der Verbesserung von LobeChat zu helfen und dir ein besseres Produkterlebnis zu bieten. Du kannst dies jederzeit in den „Einstellungen“ - „Über“ deaktivieren.",
+    "desc": "Wir möchten anonyme Nutzungsdaten sammeln, um uns bei der Verbesserung von FastWki-Chat zu helfen und dir ein besseres Produkterlebnis zu bieten. Du kannst dies jederzeit in den „Einstellungen“ - „Über“ deaktivieren.",
     "learnMore": "Mehr erfahren",
-    "title": "Hilf LobeChat, besser zu werden"
+    "title": "Hilf FastWki-Chat, besser zu werden"
   },
   "temp": "Temporär",
   "terms": "Nutzungsbedingungen",
