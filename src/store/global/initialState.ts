@@ -23,7 +23,6 @@ export enum SettingsTabs {
   About = 'about',
   Agent = 'agent',
   Common = 'common',
-  LLM = 'llm',
   Sync = 'sync',
   TTS = 'tts',
 }

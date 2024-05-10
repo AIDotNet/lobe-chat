@@ -39,12 +39,7 @@ export const useCategory = ({ mobile }: UseCategoryOptions = {}) => {
             </Flexbox>
           ),
         },
-        showLLM && {
-          icon: <Icon icon={Brain} size={iconSize} />,
-          key: SettingsTabs.LLM,
-          label: t('tab.llm'),
-        },
-        { icon: <Icon icon={Mic2} size={iconSize} />, key: SettingsTabs.TTS, label: t('tab.tts') },
+        showLLM && 
         {
           icon: <Icon icon={Bot} size={iconSize} />,
           key: SettingsTabs.Agent,
