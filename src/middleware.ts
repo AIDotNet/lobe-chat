@@ -25,7 +25,7 @@ const nextAuthMiddleware = auth((req) => {
   const session = req.auth;
 
   // Check if next-auth throws errors
-  // refs: https://github.com/lobehub/lobe-chat/pull/1323
+  // refs: https://github.com/AIDotNet/lobe-chat/pull/1323
   const isLoggedIn = !!session?.expires;
 
   // Remove & amend OAuth authorized header

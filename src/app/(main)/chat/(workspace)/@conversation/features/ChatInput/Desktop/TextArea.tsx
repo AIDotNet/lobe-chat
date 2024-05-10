@@ -94,7 +94,7 @@ const InputArea = memo<InputAreaProps>(({ setExpand }) => {
           // eslint-disable-next-line unicorn/consistent-function-scoping
           const send = () => {
             // avoid inserting newline when sending message.
-            // refs: https://github.com/lobehub/lobe-chat/pull/989
+            // refs: https://github.com/AIDotNet/lobe-chat/pull/989
             e.preventDefault();
 
             sendMessage();

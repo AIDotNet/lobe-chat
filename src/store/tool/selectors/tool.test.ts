@@ -134,7 +134,7 @@ describe('toolSelectors', () => {
       expect(result).toEqual([]);
     });
 
-    // fix https://github.com/lobehub/lobe-chat/issues/2036
+    // fix https://github.com/AIDotNet/lobe-chat/issues/2036
     it('should not contain url', () => {
       const result = toolSelectors.enabledSchema(['plugin-3'])(mockState);
       expect(result[0].function).toEqual({

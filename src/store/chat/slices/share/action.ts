@@ -20,7 +20,7 @@ interface ShareMessage {
 
 const Footer: ShareMessage = {
   from: 'gpt',
-  value: `Share from [**🤯 FastWki-Chat**](https://github.com/lobehub/lobe-chat) - ${dayjs().format(
+  value: `Share from [**🤯 FastWki-Chat**](https://github.com/AIDotNet/lobe-chat) - ${dayjs().format(
     'YYYY-MM-DD',
   )}`,
 };

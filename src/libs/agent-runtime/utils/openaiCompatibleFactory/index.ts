@@ -75,7 +75,7 @@ export const LobeOpenAICompatibleFactory = ({
           : (payload as unknown as OpenAI.ChatCompletionCreateParamsStreaming);
 
         const response = await this.client.chat.completions.create(postPayload, {
-          // https://github.com/lobehub/lobe-chat/pull/318
+          // https://github.com/AIDotNet/lobe-chat/pull/318
           headers: { Accept: '*/*' },
           signal: options?.signal,
         });
@@ -92,7 +92,7 @@ export const LobeOpenAICompatibleFactory = ({
       } catch (error) {
         let desensitizedEndpoint = this.baseURL;
 
-        // refs: https://github.com/lobehub/lobe-chat/issues/842
+        // refs: https://github.com/AIDotNet/lobe-chat/issues/842
         if (this.baseURL !== DEFAULT_BASE_URL) {
           desensitizedEndpoint = desensitizeUrl(this.baseURL);
         }

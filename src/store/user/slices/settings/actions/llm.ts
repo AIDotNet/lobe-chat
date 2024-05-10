@@ -2,21 +2,7 @@ import useSWR, { SWRResponse } from 'swr';
 import type { StateCreator } from 'zustand/vanilla';
 
 import {
-  AnthropicProviderCard,
-  AzureProviderCard,
-  BedrockProviderCard,
-  GoogleProviderCard,
-  GroqProviderCard,
-  MinimaxProviderCard,
-  MistralProviderCard,
-  MoonshotProviderCard,
-  OllamaProviderCard,
   OpenAIProviderCard,
-  OpenRouterProviderCard,
-  PerplexityProviderCard,
-  TogetherAIProviderCard,
-  ZeroOneProviderCard,
-  ZhiPuProviderCard,
 } from '@/config/modelProviders';
 import { UserStore } from '@/store/user';
 import { ChatModelCard } from '@/types/llm';
@@ -96,26 +82,6 @@ export const llmSettingsSlice: StateCreator<
         ...OpenAIProviderCard,
         chatModels: mergeModels('openai', OpenAIProviderCard.chatModels),
       },
-      { ...AzureProviderCard, chatModels: mergeModels('azure', []) },
-      { ...OllamaProviderCard, chatModels: mergeModels('ollama', OllamaProviderCard.chatModels) },
-      AnthropicProviderCard,
-      GoogleProviderCard,
-      {
-        ...OpenRouterProviderCard,
-        chatModels: mergeModels('openrouter', OpenRouterProviderCard.chatModels),
-      },
-      {
-        ...TogetherAIProviderCard,
-        chatModels: mergeModels('togetherai', TogetherAIProviderCard.chatModels),
-      },
-      BedrockProviderCard,
-      PerplexityProviderCard,
-      MinimaxProviderCard,
-      MistralProviderCard,
-      GroqProviderCard,
-      MoonshotProviderCard,
-      ZeroOneProviderCard,
-      ZhiPuProviderCard,
     ];
 
     set({ defaultModelProviderList }, false, n(`refreshDefaultModelList - ${params?.trigger}`));

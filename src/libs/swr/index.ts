@@ -8,7 +8,7 @@ import useSWR, { SWRHook } from 'swr';
 export const useClientDataSWR: SWRHook = (key, fetch, config) =>
   useSWR(key, fetch, {
     // default is 2000ms ,it makes the user's quick switch don't work correctly.
-    // Cause issue like this: https://github.com/lobehub/lobe-chat/issues/532
+    // Cause issue like this: https://github.com/AIDotNet/lobe-chat/issues/532
     // we need to set it to 0.
     dedupingInterval: 0,
     refreshWhenOffline: false,

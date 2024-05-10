@@ -15,7 +15,7 @@ import { ChatErrorType } from '@/types/fetch';
 export const getJWTPayload = async (token: string): Promise<JWTPayload> => {
   //如果是 HTTP 协议发起的请求，直接解析 token
   // 这是一个非常 hack 的解决方案，未来要找更好的解决方案来处理这个问题
-  // refs: https://github.com/lobehub/lobe-chat/pull/1238
+  // refs: https://github.com/AIDotNet/lobe-chat/pull/1238
   if (token.startsWith(NON_HTTP_PREFIX)) {
     const jwtParts = token.split('.');
 

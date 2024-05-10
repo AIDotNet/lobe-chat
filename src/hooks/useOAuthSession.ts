@@ -10,7 +10,7 @@ interface OAuthSession {
 export const useOAuthSession = () => {
   let authSession: SessionContextValue | null;
   try {
-    // refs: https://github.com/lobehub/lobe-chat/pull/1286
+    // refs: https://github.com/AIDotNet/lobe-chat/pull/1286
     // eslint-disable-next-line react-hooks/rules-of-hooks
     authSession = useSession();
   } catch {

@@ -33,7 +33,7 @@ const AgentTTS = dynamic(() => import('@/features/AgentSetting/AgentTTS'), { loa
 
 /**
  * @description: Agent Settings Modal (intercepting route: /chat/settings/modal )
- * @refs: https://github.com/lobehub/lobe-chat/discussions/2295#discussioncomment-9290942
+ * @refs: https://github.com/AIDotNet/lobe-chat/discussions/2295#discussioncomment-9290942
  */
 
 const Page = () => {

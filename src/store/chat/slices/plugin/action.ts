@@ -215,7 +215,7 @@ export const chatPlugin: StateCreator<
         type: (type ?? 'default') as any,
       };
 
-      // fix https://github.com/lobehub/lobe-chat/issues/1094, remove and retry after experiencing plugin illusion
+      // fix https://github.com/AIDotNet/lobe-chat/issues/1094, remove and retry after experiencing plugin illusion
       if (!apiName) {
         internal_resendMessage(id);
         deleteMessage(id);

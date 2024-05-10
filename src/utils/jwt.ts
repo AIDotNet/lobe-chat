@@ -9,7 +9,7 @@ export const createJWT = async <T>(payload: T) => {
   const encoder = new TextEncoder();
 
   // fix the issue that crypto.subtle is not available in non-HTTPS environment
-  // refs: https://github.com/lobehub/lobe-chat/pull/1238
+  // refs: https://github.com/AIDotNet/lobe-chat/pull/1238
   if (!crypto.subtle) {
     const buffer = encoder.encode(JSON.stringify(payload));
 

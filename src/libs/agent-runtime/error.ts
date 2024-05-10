@@ -7,48 +7,6 @@ export const AgentRuntimeErrorType = {
   OpenAIBizError: 'OpenAIBizError',
 
   NoOpenAIAPIKey: 'NoOpenAIAPIKey',
-
-  InvalidAzureAPIKey: 'InvalidAzureAPIKey',
-  AzureBizError: 'AzureBizError',
-
-  InvalidZhipuAPIKey: 'InvalidZhipuAPIKey',
-  ZhipuBizError: 'ZhipuBizError',
-
-  InvalidGoogleAPIKey: 'InvalidGoogleAPIKey',
-  GoogleBizError: 'GoogleBizError',
-
-  InvalidBedrockCredentials: 'InvalidBedrockCredentials',
-  BedrockBizError: 'BedrockBizError',
-
-  InvalidMistralAPIKey: 'InvalidMistralAPIKey',
-  MistralBizError: 'MistralBizError',
-
-  InvalidMoonshotAPIKey: 'InvalidMoonshotAPIKey',
-  MoonshotBizError: 'MoonshotBizError',
-
-  InvalidOllamaArgs: 'InvalidOllamaArgs',
-  OllamaBizError: 'OllamaBizError',
-
-  InvalidPerplexityAPIKey: 'InvalidPerplexityAPIKey',
-  PerplexityBizError: 'PerplexityBizError',
-
-  InvalidAnthropicAPIKey: 'InvalidAnthropicAPIKey',
-  AnthropicBizError: 'AnthropicBizError',
-
-  InvalidGroqAPIKey: 'InvalidGroqAPIKey',
-  GroqBizError: 'GroqBizError',
-
-  InvalidZeroOneAPIKey: 'InvalidZeroOneAPIKey',
-  ZeroOneBizError: 'ZeroOneBizError',
-
-  InvalidOpenRouterAPIKey: 'InvalidOpenRouterAPIKey',
-  OpenRouterBizError: 'OpenRouterBizError',
-
-  InvalidTogetherAIAPIKey: 'InvalidTogetherAIAPIKey',
-  TogetherAIBizError: 'TogetherAIBizError',
-
-  InvalidMinimaxAPIKey: 'InvalidMinimaxAPIKey',
-  MinimaxBizError: 'MinimaxBizError',
 } as const;
 
 export type ILobeAgentRuntimeErrorType =

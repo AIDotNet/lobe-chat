@@ -35,7 +35,7 @@ export interface SendMessageParams {
   onlyAddUserMessage?: boolean;
   /**
    *
-   * https://github.com/lobehub/lobe-chat/pull/2086
+   * https://github.com/AIDotNet/lobe-chat/pull/2086
    */
   isWelcomeQuestion?: boolean;
 }
@@ -428,7 +428,7 @@ export const chatMessage: StateCreator<
     if (config.model === 'gpt-4-vision-preview') {
       /* eslint-disable unicorn/no-lonely-if */
       if (!config.params.max_tokens)
-        // refs: https://github.com/lobehub/lobe-chat/issues/837
+        // refs: https://github.com/AIDotNet/lobe-chat/issues/837
         config.params.max_tokens = 2048;
     }
 

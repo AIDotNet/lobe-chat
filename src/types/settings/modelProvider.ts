@@ -41,21 +41,7 @@ export interface AWSBedrockConfig extends Omit<GeneralModelProviderConfig, 'apiK
 }
 
 export interface GlobalLLMConfig {
-  anthropic: GeneralModelProviderConfig;
-  azure: AzureOpenAIConfig;
-  bedrock: AWSBedrockConfig;
-  google: GeneralModelProviderConfig;
-  groq: GeneralModelProviderConfig;
-  minimax: GeneralModelProviderConfig;
-  mistral: GeneralModelProviderConfig;
-  moonshot: GeneralModelProviderConfig;
-  ollama: GeneralModelProviderConfig;
   openai: GeneralModelProviderConfig;
-  openrouter: GeneralModelProviderConfig;
-  perplexity: GeneralModelProviderConfig;
-  togetherai: GeneralModelProviderConfig;
-  zeroone: GeneralModelProviderConfig;
-  zhipu: GeneralModelProviderConfig;
 }
 
 export type GlobalLLMProviderKey = keyof GlobalLLMConfig;
