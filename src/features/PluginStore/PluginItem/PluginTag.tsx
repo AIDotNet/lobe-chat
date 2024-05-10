@@ -43,7 +43,7 @@ const PluginTag = memo<PluginTagProps>(({ showIcon = true, author, type, showTex
   const { t } = useTranslation('plugin');
   const { styles, cx } = useStyles();
   const isCustom = type === 'customPlugin';
-  const isOfficial = author === 'LobeHub';
+  const isOfficial = author === 'AIDotNet';
 
   return (
     <Tag

@@ -11,7 +11,7 @@
     },
     "defaultMessage": "I am your personal intelligent assistant FastWki-Chat, how can I help you now?\nIf you need a more professional or customized assistant, you can click on `+` to create a custom assistant",
     "qa": {
-      "q01": "What is LobeHub?",
+      "q01": "What is AIDotNet?",
       "q02": "What is FastWki-Chat?",
       "q03": "Does FastWki-Chat have community support?",
       "q04": "What functions does FastWki-Chat support?",
@@ -42,7 +42,7 @@
   "pickAgent": "Or choose from the following agent templates",
   "skip": "Skip Creation",
   "slogan": {
-    "desc1": "Pioneering the new age of thinking and creating. Built for you, the Super Individual.",
+    "desc1": "Turn on smarter Smart assistants for your projects.",
     "desc2": "Create your first agent and let's get started~",
     "title": "Unlock the superpower of your brain"
   }
