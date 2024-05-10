@@ -17,7 +17,7 @@ export interface PluginTagProps {
   plugins: string[];
 }
 
-const PluginTag = memo<PluginTagProps>(({ plugins }) => {
+const PluginTag = memo<PluginTagProps>(({ plugins }: any) => {
   const { showDalle } = useServerConfigStore(featureFlagsSelectors);
   const list = useToolStore(toolSelectors.metaList(showDalle), isEqual);
   const displayPlugin = useToolStore(toolSelectors.getMetaById(plugins[0]), isEqual);
@@ -48,9 +48,9 @@ const PluginTag = memo<PluginTagProps>(({ plugins }) => {
     <Dropdown menu={{ items }}>
       <div>
         <Tag>
-          {<Icon icon={LucideToyBrick} />}
+          {/* {<Icon icon={LucideToyBrick} />}
           {pluginHelpers.getPluginTitle(displayPlugin) || plugins[0]}
-          {count > 1 && <div>({plugins.length - 1}+)</div>}
+          {count > 1 && <div>({plugins.length - 1}+)</div>} */}
         </Tag>
       </div>
     </Dropdown>

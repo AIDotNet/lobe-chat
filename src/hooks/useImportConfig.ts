@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
 import { ImportResults, configService } from '@/services/config';
-import { shareService } from '@/services/share';
 import { useChatStore } from '@/store/chat';
 import { useSessionStore } from '@/store/session';
 import { useUserStore } from '@/store/user';
@@ -32,12 +31,7 @@ export const useImportConfig = () => {
    */
   const importSettings = (settingsParams: string | null) => {
     if (settingsParams) {
-      const importSettings = shareService.decodeShareSettings(settingsParams);
-      if (importSettings?.message || !importSettings?.data) {
-        // handle some error
-        return;
-      }
-      setSettings(importSettings.data);
+      
     }
   };
 

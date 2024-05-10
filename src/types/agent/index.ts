@@ -54,10 +54,6 @@ export interface LobeAgentConfig {
    * 系统角色
    */
   systemRole: string;
-  /**
-   * 语音服务
-   */
-  tts: LobeAgentTTSConfig;
 }
 
 export type LobeAgentConfigKeys =

@@ -22,6 +22,7 @@ const n = setNamespace('preference');
  */
 export interface GlobalStoreAction {
   switchBackToChat: (sessionId?: string) => void;
+  switchToApp: () => void;
   toggleChatSideBar: (visible?: boolean) => void;
   toggleExpandSessionGroup: (id: string, expand: boolean) => void;
   toggleMobileTopic: (visible?: boolean) => void;
@@ -39,6 +40,9 @@ export const globalActionSlice: StateCreator<
 > = (set, get) => ({
   switchBackToChat: (sessionId) => {
     get().router?.push(SESSION_CHAT_URL(sessionId || INBOX_SESSION_ID, get().isMobile));
+  },
+  switchToApp: () => {
+    get().router?.push('/app');
   },
   toggleChatSideBar: (newValue) => {
     const showChatSideBar =

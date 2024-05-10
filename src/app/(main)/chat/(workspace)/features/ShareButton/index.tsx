@@ -18,10 +18,10 @@ interface ShareButtonProps {
   setOpen?: (open: boolean) => void;
 }
 
-const ShareButton = memo<ShareButtonProps>(({ mobile, setOpen, open }) => {
+const ShareButton = memo<ShareButtonProps>(({ mobile, setOpen, open }: any) => {
   const [isModalOpen, setIsModalOpen] = useWorkspaceModal(open, setOpen);
   const { t } = useTranslation('common');
-  const [shareLoading] = useChatStore((s) => [s.shareLoading]);
+  const [shareLoading] = useChatStore((s: any) => [s.shareLoading]);
 
   return (
     <>

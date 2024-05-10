@@ -30,10 +30,6 @@ export interface GeneralModelProviderConfig {
   remoteModelCards?: ChatModelCard[];
 }
 
-export interface AzureOpenAIConfig extends GeneralModelProviderConfig {
-  apiVersion?: string;
-}
-
 export interface AWSBedrockConfig extends Omit<GeneralModelProviderConfig, 'apiKey' | 'endpoint'> {
   accessKeyId?: string;
   region?: string;

@@ -2,7 +2,7 @@
 
 import { Icon, MobileTabBar, type MobileTabBarProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { Compass, MessageSquare, User } from 'lucide-react';
+import { AppWindowMac, MessageSquare, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { rgba } from 'polished';
 import { memo, useMemo } from 'react';
@@ -42,6 +42,16 @@ const Nav = memo(() => {
           router.push('/chat');
         },
         title: t('tab.chat'),
+      },
+      {
+        icon: (active:any) => (
+          <Icon className={active ? styles.active : undefined} icon={AppWindowMac} />
+        ),
+        key: SidebarTabKey.App,
+        onClick: () => {
+          router.push('/app');
+        },
+        title: t('tab.app'),
       },
       {
         icon: (active:any) => <Icon className={active ? styles.active : undefined} icon={User} />,

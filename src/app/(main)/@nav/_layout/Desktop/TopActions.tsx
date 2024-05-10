@@ -1,5 +1,5 @@
 import { ActionIcon } from '@lobehub/ui';
-import { Compass, MessageSquare } from 'lucide-react';
+import { AppWindowMac, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +15,7 @@ export interface TopActionProps {
 const TopActions = memo<TopActionProps>(({ tab }) => {
   const { t } = useTranslation('common');
   const switchBackToChat = useGlobalStore((s) => s.switchBackToChat);
+  const switchToApp = useGlobalStore((s) => s.switchToApp);
 
   return (
     <>
@@ -32,6 +33,22 @@ const TopActions = memo<TopActionProps>(({ tab }) => {
           placement={'right'}
           size="large"
           title={t('tab.chat')}
+        />
+      </Link>
+      <Link
+        aria-label={t('tab.app')}
+        href={'/app'}
+        onClick={(e) => {
+          e.preventDefault();
+          switchToApp();
+        }}
+      >
+        <ActionIcon
+          active={tab === SidebarTabKey.App}
+          icon={AppWindowMac}
+          placement={'right'}
+          size="large"
+          title={t('tab.app')}
         />
       </Link>
     </>

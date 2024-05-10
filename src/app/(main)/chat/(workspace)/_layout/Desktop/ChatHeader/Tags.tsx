@@ -9,6 +9,7 @@ import { useUserStore } from '@/store/user';
 import { modelProviderSelectors } from '@/store/user/selectors';
 
 import PluginTag from '../../../features/PluginTag';
+import { Tag } from '@lobehub/ui';
 
 const TitleTags = memo(() => {
   const [model, plugins] = useAgentStore((s) => [
@@ -16,14 +17,18 @@ const TitleTags = memo(() => {
     agentSelectors.currentAgentPlugins(s),
   ]);
 
-  const showPlugin = useUserStore(modelProviderSelectors.isModelEnabledFunctionCall(model));
+  // const showPlugin = useUserStore(modelProviderSelectors.isModelEnabledFunctionCall(model));
 
+  // TODO: 显示应用
   return (
     <Flexbox align={'center'} horizontal>
-      <ModelSwitchPanel>
+      {/* <ModelSwitchPanel>
         <ModelTag model={model} />
-      </ModelSwitchPanel>
-      {showPlugin && plugins?.length > 0 && <PluginTag plugins={plugins} />}
+      </ModelSwitchPanel> */}
+      <Tag>
+        应用：TokenAI
+      </Tag>
+      {/* {showPlugin && plugins?.length > 0 && <PluginTag plugins={plugins} />} */}
     </Flexbox>
   );
 });

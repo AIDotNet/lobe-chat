@@ -2,6 +2,18 @@ export const LOBE_CHAT_TRACE_HEADER = 'X-lobe-trace';
 export const LOBE_CHAT_TRACE_ID = 'X-lobe-chat-trace-id';
 export const LOBE_CHAT_OBSERVATION_ID = 'X-lobe-observation-id';
 
+
+let FAST_API_URL = 'http://localhost:5124';
+
+// 从环境变量中获取
+if (process.env.FAST_API_URL) {
+  FAST_API_URL = process.env.FAST_API_URL;
+}
+
+export {
+  FAST_API_URL
+}
+
 export enum TraceNameMap {
   ConnectivityChecker = 'Connectivity Checker',
   Conversation = 'Conversation',

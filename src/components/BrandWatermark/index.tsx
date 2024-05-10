@@ -17,7 +17,7 @@ const useStyles = createStyles(({ token, css }) => ({
   `,
 }));
 
-const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest }) => {
+const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest }:any) => {
   const { styles, theme } = useStyles();
   return (
     <Flexbox
@@ -29,8 +29,8 @@ const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest })
       {...rest}
     >
       <span>Powered by</span>
-      <Link className={styles.logoLink} href={'https://chat.token-ai.cn'} target={'_blank'}>
-        <Logo size={20} type={'text'} />
+      <Link className={styles.logoLink} href={'https://token-ai.cn'} target={'_blank'}>
+        TokenAI
       </Link>
     </Flexbox>
   );
