@@ -3,7 +3,6 @@ import AgentMeta from './AgentMeta';
 import AgentModal from './AgentModal';
 import AgentPlugin from './AgentPlugin';
 import AgentPrompt from './AgentPrompt';
-import AgentTTS from './AgentTTS';
 import StoreUpdater, { StoreUpdaterProps } from './StoreUpdater';
 import { Provider, createStore } from './store';
 
@@ -17,7 +16,6 @@ const AgentSettings = (props: AgentSettingsProps) => {
       <AgentMeta />
       <AgentChat />
       <AgentModal />
-      {/* <AgentTTS /> */}
       <AgentPlugin />
     </Provider>
   );

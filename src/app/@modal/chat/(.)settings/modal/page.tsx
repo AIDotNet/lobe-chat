@@ -29,12 +29,7 @@ const AgentModal = dynamic(() => import('@/features/AgentSetting/AgentModal'), {
   loading,
   ssr: false,
 });
-// const AgentTTS = dynamic(() => import('@/features/AgentSetting/AgentTTS'), { loading, ssr: false });
 
-/**
- * @description: Agent Settings Modal (intercepting route: /chat/settings/modal )
- * @refs: https://github.com/AIDotNet/lobe-chat/discussions/2295#discussioncomment-9290942
- */
 
 const Page = () => {
   const { tab = ChatSettingsTabs.Meta } = useQuery();
@@ -44,7 +39,6 @@ const Page = () => {
       {tab === ChatSettingsTabs.Prompt && <AgentPrompt modal />}
       {tab === ChatSettingsTabs.Chat && <AgentChat />}
       {tab === ChatSettingsTabs.Modal && <AgentModal />}
-      {/* {tab === ChatSettingsTabs.TTS && <AgentTTS />} */}
       {tab === ChatSettingsTabs.Plugin && <AgentPlugin />}
     </>
   );
