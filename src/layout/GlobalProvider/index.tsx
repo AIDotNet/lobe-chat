@@ -20,17 +20,6 @@ import Locale from './Locale';
 import StoreInitialization from './StoreInitialization';
 import StyleRegistry from './StyleRegistry';
 
-let DebugUI: FC = () => null;
-
-// we need use Constant Folding to remove code below in production
-// refs: https://webpack.js.org/plugins/internal-plugins/#constplugin
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line unicorn/no-lonely-if
-  if (getClientConfig().DEBUG_MODE) {
-    DebugUI = dynamic(() => import('@/features/DebugUI'), { ssr: false }) as FC;
-  }
-}
-
 interface GlobalLayoutProps {
   children: ReactNode;
 }
@@ -66,7 +55,6 @@ const GlobalLayout = async ({ children }: GlobalLayoutProps) => {
           >
             {children}
           </ServerConfigStoreProvider>
-          <DebugUI />
         </AppTheme>
       </Locale>
     </StyleRegistry>
