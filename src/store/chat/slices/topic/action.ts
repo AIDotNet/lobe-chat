@@ -123,7 +123,7 @@ export const chatTopic: StateCreator<
 
     let output = '';
 
-    // 自动总结话题标题
+    // 自动总结对话记录标题
     await chatService.fetchPresetTaskResult({
       onError: () => {
         updateTopicTitleInSummary(topicId, topic.title);

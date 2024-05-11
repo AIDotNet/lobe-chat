@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-
 import { getCanonicalUrl } from '@/const/url';
 
 import Client from './(loading)/Client';

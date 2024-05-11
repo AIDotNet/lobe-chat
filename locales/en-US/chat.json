@@ -1,6 +1,6 @@
 {
   "ModelSwitch": {
-    "title": "Model"
+    "title": "App"
   },
   "agentDefaultMessage": "Hello, I'm **{{name}}**. You can start chatting with me right away, or go to [Agent Settings](/chat/settings#session={{id}}) to complete my information.",
   "agentDefaultMessageWithSystemRole": "Hello, I'm **{{name}}**, {{systemRole}}. Let's start chatting!",

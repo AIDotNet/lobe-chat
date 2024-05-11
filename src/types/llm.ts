@@ -7,7 +7,7 @@ export interface ChatModelCard {
   /**
    * the name show for end user
    */
-  displayName?: string;
+  name?: string;
 
   /**
    * whether model is enabled by default

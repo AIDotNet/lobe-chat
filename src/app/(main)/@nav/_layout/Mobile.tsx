@@ -2,7 +2,7 @@
 
 import { Icon, MobileTabBar, type MobileTabBarProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { AppWindowMac, MessageSquare, User } from 'lucide-react';
+import { AppWindowMac, MessageSquare, SquareFunction, Album,User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { rgba } from 'polished';
 import { memo, useMemo } from 'react';
@@ -52,6 +52,36 @@ const Nav = memo(() => {
           router.push('/app');
         },
         title: t('tab.app'),
+      },
+      {
+        icon: (active:any) => (
+          <Icon className={active ? styles.active : undefined} icon={SquareFunction} />
+        ),
+        key: SidebarTabKey.FuncationCall,
+        onClick: () => {
+          router.push('/function-call');
+        },
+        title: t('tab.function-call'),
+      },
+      {
+        icon: (active:any) => (
+          <Icon className={active ? styles.active : undefined} icon={Album} />
+        ),
+        key: SidebarTabKey.Wiki,
+        onClick: () => {
+          router.push('/wiki');
+        },
+        title: t('tab.wiki'),
+      },
+      {
+        icon: (active:any) => (
+          <Icon className={active ? styles.active : undefined} icon={User} />
+        ),
+        key: SidebarTabKey.User,
+        onClick: () => {
+          router.push('/user');
+        },
+        title: t('tab.user'),
       },
       {
         icon: (active:any) => <Icon className={active ? styles.active : undefined} icon={User} />,

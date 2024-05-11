@@ -16,7 +16,7 @@
     "messages": "消息",
     "sessions": "助手",
     "today": "今日新增",
-    "topics": "话题"
+    "topics": "对话记录"
   },
   "defaultAgent": "自定义助手",
   "defaultSession": "自定义助手",
@@ -53,7 +53,7 @@
       "sessionGroups": "分组",
       "sessions": "助手",
       "skips": "重复跳过",
-      "topics": "话题",
+      "topics": "对话记录",
       "type": "数据类型"
     },
     "title": "导入数据"
@@ -148,6 +148,9 @@
   "tab": {
     "chat": "会话",
     "app": "应用",
+    "function-call": "函数调用",
+    "wiki": "知识库",
+    "user": "用户",
     "market": "发现",
     "me": "我",
     "setting": "设置"

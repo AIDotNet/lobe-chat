@@ -143,7 +143,7 @@ export const ModelItemRender = memo<ModelItemRenderProps>(({ showInfoTag = true,
     <Flexbox align={'center'} gap={32} horizontal justify={'space-between'}>
       <Flexbox align={'center'} gap={8} horizontal>
         <ModelIcon model={model.id} size={20} />
-        {model.displayName || model.id}
+        {model.name || model.id}
       </Flexbox>
 
       {showInfoTag && <ModelInfoTags {...model} />}

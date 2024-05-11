@@ -5,6 +5,8 @@ import { Input } from "@lobehub/ui";
 import { FunctionCallSelect } from "@/services/FunctionService";
 import { GetWikisList } from "@/services/WikiService";
 import { PutChatApplications } from "@/services/ChatApplicationService";
+import { set } from "lodash";
+import { getModels } from "@/utils/model";
 
 interface IAppDetailInfoProps {
     value: any;
@@ -47,12 +49,10 @@ const AppDetailInfo = memo(({ value }: IAppDetailInfoProps) => {
     } as any);
 
     useEffect(() => {
-        // getModels()
-        //     .then((models) => {
-        //         setSelectChatModel(models.chatModel.map((item) => {
-        //             return { label: item.label, value: item.value }
-        //         }));
-        //     });
+        const models = getModels();
+        setSelectChatModel(models.chatModel.map((item) => {
+            return { label: item.label, value: item.value }
+        }))
         loadingWiki();
         loadFunctionCallSelect();
 

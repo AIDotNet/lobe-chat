@@ -4,7 +4,7 @@ import { createStyles } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { LucideArrowRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { PropsWithChildren, memo, useMemo } from 'react';
+import { PropsWithChildren, memo, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
@@ -15,6 +15,7 @@ import { useUserStore } from '@/store/user';
 import { modelProviderSelectors } from '@/store/user/selectors';
 import { ModelProviderCard } from '@/types/llm';
 import { withBasePath } from '@/utils/basePath';
+import { GetChatApplicationsList } from '@/services/ChatApplicationService';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   menu: css`
@@ -37,19 +38,38 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
   `,
 }));
 
+let models = [];
 const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
   const { t } = useTranslation('components');
   const { styles, theme } = useStyles();
+  const [items, setItems] = useState([]);
   const [model, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentModel(s),
     s.updateAgentConfig,
   ]);
 
-  const router = useRouter();
-  const enabledList = useUserStore(modelProviderSelectors.modelProviderListForModelSelect, isEqual);
+  useEffect(() => {
 
-  const items = useMemo(() => {
-    const getModelItems = (provider: ModelProviderCard) => {
+    GetChatApplicationsList(1, 1000)
+      .then((res) => {
+        models = res.result;
+        setItems([
+          {
+            id: '系统应用',
+            name: '应用',
+            chatModels: models,
+          }].map((provider) => ({
+            children: getModelItems(provider),
+            key: provider.name,
+            label: <ProviderItemRender provider={provider.name} />,
+            type: 'group',
+          })));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    const getModelItems = (provider: any) => {
       const items = provider.chatModels.map((model) => ({
         key: model.id,
         label: <ModelItemRender {...model} />,
@@ -58,34 +78,27 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
         },
       }));
 
-      // if there is empty items, add a placeholder guide
-      if (items.length === 0)
-        return [
-          {
-            key: 'empty',
-            label: (
-              <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
-                {t('ModelSwitchPanel.emptyModel')}
-                <Icon icon={LucideArrowRight} />
-              </Flexbox>
-            ),
-            onClick: () => {
-              router.push(withBasePath('/settings/llm'));
-            },
-          },
-        ];
-
       return items;
+
+      // if there is empty items, add a placeholder guide
+      // if (items.length === 0)
+      //   return [
+      //     {
+      //       key: 'empty',
+      //       label: (
+      //         <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
+      //           {t('ModelSwitchPanel.emptyModel')}
+      //           <Icon icon={LucideArrowRight} />
+      //         </Flexbox>
+      //       ),
+      //       onClick: () => {
+      //         router.push(withBasePath('/settings/llm'));
+      //       },
+      //     },
+      //   ];
     };
 
-    // otherwise show with provider group
-    return enabledList.map((provider) => ({
-      children: getModelItems(provider),
-      key: provider.id,
-      label: <ProviderItemRender provider={provider.id} />,
-      type: 'group',
-    }));
-  }, [enabledList]);
+  }, []);
 
   return (
     <Dropdown

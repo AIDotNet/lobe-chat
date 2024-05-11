@@ -129,6 +129,7 @@
     "lodash-es": "^4.17.21",
     "lucide-react": "latest",
     "modern-screenshot": "^4.4.39",
+    "monaco-editor": "^0.48.0",
     "nanoid": "^5.0.7",
     "next": "^14.2.3",
     "next-auth": "5.0.0-beta.15",

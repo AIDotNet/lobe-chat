@@ -148,6 +148,9 @@
   "tab": {
     "chat": "Chat",
     "app": "App",
+    "function-call": "function call",
+    "wiki": "wiki",
+    "user": "user",
     "market": "Discover",
     "me": "Me",
     "setting": "Settings"
