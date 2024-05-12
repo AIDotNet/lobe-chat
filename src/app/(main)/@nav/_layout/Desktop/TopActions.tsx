@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys-fix/sort-keys-fix , typescript-sort-keys/interface */
 import { ActionIcon } from '@lobehub/ui';
 import { AppWindowMac, SquareFunction, Album, User } from 'lucide-react';
 import Link from 'next/link';

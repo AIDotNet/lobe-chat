@@ -205,3 +205,19 @@ export function GetChatDialogHistoryInfo(historyId: string) {
 export function PurageMessageHistory(dialogId:string){
     return post(`${prefix}/PurgeMessageHistory?dialogId=${dialogId}`);
 }
+
+export function CreateQuestions(data: any) {
+    return postJson(`${prefix}/Questions`, data);
+}
+
+export function GetQuestions(applicationId: string) {
+    return get(`${prefix}/Questions?applicationId=${applicationId}`);
+}
+
+export function RemoveQuestions(id:string){
+    return del(`${prefix}/Questions/${id}`);
+}
+
+export function SharedQuestions(id:string){
+    return get(`${prefix}/SharedQuestions?sharedId=${id}`);
+}

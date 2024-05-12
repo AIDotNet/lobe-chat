@@ -13,7 +13,7 @@ jest*
 _test_
 __test__
 *.test.ts
-
+*.ts
 # umi
 .umi
 .umi-production

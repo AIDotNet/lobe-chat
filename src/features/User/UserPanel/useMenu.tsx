@@ -112,15 +112,15 @@ export const useMenu = () => {
   ];
 
   const helps: MenuProps['items'] = [
-    {
-      icon: <Icon icon={DiscordIcon} />,
-      key: 'discord',
-      label: (
-        <Link href={DISCORD} target={'_blank'}>
-          {t('userPanel.discord')}
-        </Link>
-      ),
-    },
+    // {
+    //   icon: <Icon icon={DiscordIcon} />,
+    //   key: 'discord',
+    //   label: (
+    //     <Link href={DISCORD} target={'_blank'}>
+    //       {t('userPanel.discord')}
+    //     </Link>
+    //   ),
+    // },
     {
       children: [
         {

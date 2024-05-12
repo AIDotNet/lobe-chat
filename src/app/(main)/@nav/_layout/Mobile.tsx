@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys-fix/sort-keys-fix , typescript-sort-keys/interface */
 'use client';
 
 import { Icon, MobileTabBar, type MobileTabBarProps } from '@lobehub/ui';

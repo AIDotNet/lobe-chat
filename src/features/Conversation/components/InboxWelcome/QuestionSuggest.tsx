@@ -5,13 +5,14 @@ import { createStyles } from 'antd-style';
 import { shuffle } from 'lodash-es';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { USAGE_DOCUMENTS } from '@/const/url';
 import { useSendMessage } from '@/features/ChatInput/useSend';
 import { useChatStore } from '@/store/chat';
+import { GetQuestions, SharedQuestions } from '@/services/ChatApplicationService';
 
 const useStyles = createStyles(({ css, token, responsive }) => ({
   card: css`
@@ -64,6 +65,32 @@ const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   const { t } = useTranslation('welcome');
   const { styles } = useStyles();
   const sendMessage = useSendMessage();
+  const [qas, setQa] = useState<any[]>([]);
+
+
+  function loadData() {
+
+    // 获取当前query中的sharedId
+    const query = new URLSearchParams(window.location.search);
+    const sharedId = query.get('sharedId');
+    const id = query.get('id');
+
+    if (sharedId) {
+      SharedQuestions(sharedId)
+        .then((res) => {
+          setQa(res)
+        })
+      return null;
+    }
+    GetQuestions(id)
+      .then((res) => {
+        setQa(res)
+      })
+  }
+
+  useEffect(() => {
+    loadData();
+  }, [])
 
   return (
     <Flexbox gap={8} width={'100%'}>
@@ -78,7 +105,7 @@ const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
         </Link>
       </Flexbox>
       <Flexbox gap={8} horizontal wrap={'wrap'}>
-        {qa.slice(0, mobile ? 2 : 5).map((item) => {
+        {qas.length === 0 && qa.slice(0, mobile ? 2 : 5).map((item) => {
           const text = t(`guide.qa.${item}` as any);
           return (
             <Flexbox
@@ -96,6 +123,23 @@ const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
             </Flexbox>
           );
         })}
+        {
+          qas.map((item) => {
+            return <Flexbox
+              align={'center'}
+              className={styles.card}
+              gap={8}
+              horizontal
+              key={item}
+              onClick={() => {
+                updateInputMessage(item.question);
+                sendMessage({ isWelcomeQuestion: true });
+              }}
+            >
+              {item.question}
+            </Flexbox>
+          })
+        }
       </Flexbox>
     </Flexbox>
   );
