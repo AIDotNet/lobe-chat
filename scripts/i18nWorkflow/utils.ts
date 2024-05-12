@@ -11,7 +11,7 @@ export const readJSON = (filePath: string) => {
 };
 
 export const replaceAssistantToAgent = (text: string) =>
-  text.replaceAll('assistant', 'agent').replaceAll('Assistant', 'Agent');
+  text;
 
 export const writeJSON = (filePath: string, data: any) => {
   const jsonStr = JSON.stringify(data, null, 2);

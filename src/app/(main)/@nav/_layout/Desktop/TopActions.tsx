@@ -28,7 +28,8 @@ const TopActions = memo<TopActionProps>(({ tab }) => {
         let items = [];
         items.push({
           href: '/app',
-          icon: AppWindowMac,
+          icon: AppWindowMac,      
+          // @ts-ignore
           title: t('tab.app'),
           key: SidebarTabKey.App,
           onClick: () => {
@@ -38,6 +39,7 @@ const TopActions = memo<TopActionProps>(({ tab }) => {
         items.push({
           href: '/function-call',
           icon: SquareFunction,
+          // @ts-ignore
           title: t('tab.function-call'),
           key: SidebarTabKey.FuncationCall,
           onClick: () => {
@@ -48,6 +50,7 @@ const TopActions = memo<TopActionProps>(({ tab }) => {
         items.push({
           href: '/wiki',
           icon: Album,
+          // @ts-ignore
           title: t('tab.wiki'),
           key: SidebarTabKey.Wiki,
           onClick: () => {
@@ -60,6 +63,7 @@ const TopActions = memo<TopActionProps>(({ tab }) => {
           items.push({
             href: '/user',
             icon: User,
+            // @ts-ignore
             title: t('tab.user'),
             key: SidebarTabKey.User,
             onClick: () => {

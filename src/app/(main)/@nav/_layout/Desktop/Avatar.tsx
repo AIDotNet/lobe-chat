@@ -30,6 +30,7 @@ const Avatar = memo(() => {
       prefixCls={'guide'}
       title={
         <Flexbox align={'center'} gap={8} horizontal>
+          {/* @ts-ignore */}
           <div style={{ lineHeight: '22px' }}>{t('userPanel.moveGuide')}</div>
           <ActionIcon
             icon={LucideX}

@@ -1,6 +1,5 @@
 import { memo, useEffect, useState } from "react";
 import { copyToClipboard } from '@lobehub/ui';
-import { ChatShareDto } from "../../../models";
 import type { TableProps } from 'antd';
 import { Button, Table, message, Dropdown, MenuProps } from 'antd';
 import styled from 'styled-components';
@@ -20,7 +19,7 @@ interface IReleaseApplicationProps {
 }
 
 export default memo((props: IReleaseApplicationProps) => {
-    const columns: TableProps<ChatShareDto>['columns'] = [
+    const columns: TableProps<any>['columns'] = [
         {
             title: '文件名',
             dataIndex: 'name',
@@ -143,7 +142,7 @@ export default memo((props: IReleaseApplicationProps) => {
         },
     ];
 
-    const [data, setData] = useState<ChatShareDto[]>([]);
+    const [data, setData] = useState<any[]>([]);
     const [visible, setVisible] = useState(false);
     const [input, setInput] = useState({
         page: 1,

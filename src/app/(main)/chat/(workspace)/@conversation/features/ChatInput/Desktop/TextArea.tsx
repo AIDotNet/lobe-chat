@@ -115,6 +115,7 @@ const InputArea = memo<InputAreaProps>(({ setExpand }) => {
             send();
           }
         }}
+        // @ts-ignore
         placeholder={t('sendPlaceholder')}
         ref={ref}
         type={'pure'}

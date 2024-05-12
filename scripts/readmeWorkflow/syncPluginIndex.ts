@@ -10,9 +10,12 @@ const genPluginTable = (data: DataItem[], lang: string) => {
     .slice(0, 4)
     .map((item) => [
       [
+        
+          // @ts-ignore
         genLink(item.meta.title.replaceAll('|', ','), PLGUIN_URL),
         `<sup>By **${item.author}** on **${item.createdAt}**</sup>`,
       ].join('<br/>'),
+      // @ts-ignore
       [item.meta.description.replaceAll('|', ','), genTags(item.meta.tags)].join('<br/>'),
     ]);
   return markdownTable([

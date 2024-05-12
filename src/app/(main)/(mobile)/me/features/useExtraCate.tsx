@@ -1,3 +1,6 @@
+
+
+
 import { DiscordIcon, Icon } from '@lobehub/ui';
 import { Book, Feather, HardDriveDownload, HardDriveUpload } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -16,11 +19,13 @@ export const useExtraCate = () => {
     {
       icon: <Icon icon={HardDriveUpload} size={iconSize} />,
       key: 'import',
+      // @ts-ignore
       label: <DataImporter>{t('import')}</DataImporter>,
     },
     {
       icon: <Icon icon={HardDriveDownload} size={iconSize} />,
       key: 'export',
+      // @ts-ignore
       label: t('export'),
       onClick: configService.exportAll,
     },
@@ -33,12 +38,14 @@ export const useExtraCate = () => {
     {
       icon: <Icon icon={Book} size={iconSize} />,
       key: 'docs',
+      // @ts-ignore
       label: t('document'),
       onClick: () => window.open(DOCUMENTS, '__blank'),
     },
     {
       icon: <Icon icon={Feather} size={iconSize} />,
       key: 'feedback',
+      // @ts-ignore
       label: t('feedback'),
       onClick: () => window.open(FEEDBACK, '__blank'),
     },

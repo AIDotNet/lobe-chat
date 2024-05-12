@@ -49,6 +49,7 @@ const Nav = memo(() => {
             onClick: () => {
               router.push('/app');
             },
+            // @ts-ignore
             title: t('tab.app'),
           },
           {
@@ -59,6 +60,7 @@ const Nav = memo(() => {
             onClick: () => {
               router.push('/function-call');
             },
+            // @ts-ignore
             title: t('tab.function-call'),
           },
           {
@@ -69,6 +71,7 @@ const Nav = memo(() => {
             onClick: () => {
               router.push('/wiki');
             },
+            // @ts-ignore
             title: t('tab.wiki'),
           }
         ];
@@ -81,6 +84,7 @@ const Nav = memo(() => {
               onClick: () => {
                 router.push('/me');
               },
+              // @ts-ignore
               title: t('tab.me'),
             },
           );

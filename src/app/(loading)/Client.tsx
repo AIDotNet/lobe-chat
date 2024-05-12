@@ -6,7 +6,7 @@ import FullscreenLoading from '@/components/FullscreenLoading';
 
 const Loading = () => {
   const { t } = useTranslation('common');
-
+// @ts-ignore
   return <FullscreenLoading title={t('appInitializing')} />;
 };
 

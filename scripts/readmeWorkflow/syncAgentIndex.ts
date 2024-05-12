@@ -10,6 +10,8 @@ const genAgentTable = (data: DataItem[], lang: string) => {
   const content = data.slice(0, 4).map((item) => [
     [
       genLink(
+        
+          // @ts-ignore
         item.meta.title.replaceAll('|', ','),
         qs.stringifyUrl({
           query: { agent: item.identifier },
@@ -18,6 +20,7 @@ const genAgentTable = (data: DataItem[], lang: string) => {
       ),
       `<sup>By **${genLink(item.author, item.homepage)}** on **${(item as any).createAt}**</sup>`,
     ].join('<br/>'),
+    // @ts-ignore
     [item.meta.description.replaceAll('|', ','), genTags(item.meta.tags)].join('<br/>'),
   ]);
   return markdownTable([

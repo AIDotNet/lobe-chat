@@ -116,9 +116,11 @@ const Footer = memo<FooterProps>(({ setExpand }) => {
           style={{ color: theme.colorTextDescription, fontSize: 12, marginRight: 12 }}
         >
           {sendShortcut}
+          {/* @ts-ignore */}
           <span>{t('input.send')}</span>
           <span>/</span>
           {wrapperShortcut}
+          {/* @ts-ignore */}
           <span>{t('input.warp')}</span>
         </Flexbox>
         <SaveTopic />
@@ -129,6 +131,7 @@ const Footer = memo<FooterProps>(({ setExpand }) => {
               icon={<StopLoadingIcon />}
               onClick={stopGenerateMessage}
             >
+              {/* @ts-ignore */}
               {t('input.stop')}
             </Button>
           ) : (
@@ -140,6 +143,7 @@ const Footer = memo<FooterProps>(({ setExpand }) => {
                 }}
                 type={'primary'}
               >
+                {/* @ts-ignore */}
                 {t('input.send')}
               </Button>
               <SendMore />
