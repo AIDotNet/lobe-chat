@@ -1,12 +1,15 @@
 import { GridShowcase, LogoThree, SpotlightCard } from '@lobehub/ui';
 import { useEffect, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
-import { message, Button, Pagination } from 'antd';
+import { message, Button, Pagination, Dropdown } from 'antd';
 import styled from 'styled-components';
 import { DeleteOutlined } from '@ant-design/icons';
 import { DeleteChatApplications, GetChatApplicationsList } from '@/services/ChatApplicationService';
 
 import { useRouter } from 'next/navigation';
+import { MenuIcon } from 'lucide-react';
+import { ChatGLM } from '@lobehub/icons';
+import { SiChatwoot } from '@icons-pack/react-simple-icons';
 
 const AppItemDetail = styled.div`
     padding: 16px;
@@ -28,9 +31,7 @@ export function AppList(props: IAppListProps) {
 
     const render = (item: any) => (
         <Flexbox align={'flex-start'} gap={8} horizontal style={{ padding: 16, height: 100, width: '100%' }}>
-            <Flexbox onClick={()=>{
-                openAppDetail(item.id)
-            }} style={{
+            <Flexbox style={{
                 width: '100%',
             }}>
                 <div style={{ fontSize: 20, fontWeight: 600, width: '100%' }}>
@@ -45,26 +46,49 @@ export function AppList(props: IAppListProps) {
                     height: '100%',
                     marginTop: 8,
                 }}>
-                    <AppItemDetail>
-                        对话模型：
-                        {item.chatModel}
-                    </AppItemDetail>
+                    对话模型：
+                    {item.chatModel}
                 </div>
             </Flexbox>
-            <Button
-                style={{
-                    float: 'inline-end',
-                    position: 'absolute',
-                    right: 16,
+            <Dropdown
+                menu={{
+                    items: [
+                        {
+                            key: 'open-app',
+                            label: '进入应用',
+                            onClick: () => openAppDetail(item.id)
+                        },
+                        {
+                            key: 'open-chat',
+                            label: '进入对话',
+                            onClick: () => openChat(item.id)
+                        },
+                        {
+                            key: 'delete',
+                            label: '删除',
+                            onClick: () => deleteApp(item.id)
+                        },
+                    ]
                 }}
-                icon={<DeleteOutlined />}
-                onClick={() => deleteApp(item.id)}
-            />
+            >
+                <Button
+                    style={{
+                        float: 'inline-end',
+                        position: 'absolute',
+                        right: 16,
+                    }}
+                    icon={<MenuIcon />}
+                />
+            </Dropdown>
         </Flexbox>
     )
 
+    function openChat(id: string) {
+        router.push(`/chat?id=${id}`);
+    }
+
     function openAppDetail(id: string) {
-        router.push(`/app/${id}`)
+        router.push(`/app-detail?id=${id}`)
     }
 
     async function deleteApp(id: string) {

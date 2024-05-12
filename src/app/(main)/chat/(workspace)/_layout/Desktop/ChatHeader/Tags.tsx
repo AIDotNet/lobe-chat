@@ -12,7 +12,7 @@ import PluginTag from '../../../features/PluginTag';
 import { Tag } from '@lobehub/ui';
 
 const TitleTags = memo(() => {
-  const [model, plugins] = useAgentStore((s) => [
+  const [model] = useAgentStore((s) => [
     agentSelectors.currentAgentModel(s),
     agentSelectors.currentAgentPlugins(s),
   ]);
@@ -25,9 +25,9 @@ const TitleTags = memo(() => {
       {/* <ModelSwitchPanel>
         <ModelTag model={model} />
       </ModelSwitchPanel> */}
-      <Tag>
+      {/* <Tag>
         应用：TokenAI
-      </Tag>
+      </Tag> */}
       {/* {showPlugin && plugins?.length > 0 && <PluginTag plugins={plugins} />} */}
     </Flexbox>
   );

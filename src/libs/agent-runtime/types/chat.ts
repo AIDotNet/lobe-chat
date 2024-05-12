@@ -87,6 +87,8 @@ export interface ChatStreamPayload {
    * @default 1
    */
   top_p?: number;
+  applicationId?: string;
+  sharedId?: string;
 }
 
 export interface ChatCompetitionOptions {

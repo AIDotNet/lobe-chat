@@ -187,18 +187,12 @@ class ChatService {
 
     let model = res.model || DEFAULT_AGENT_CONFIG.model;
 
-    // if the provider is Azure, get the deployment name as the request model
-    if (provider === ModelProvider.Azure) {
-      const chatModelCards = modelProviderSelectors.getModelCardsById(provider)(
-        useUserStore.getState(),
-      );
-
-      const deploymentName = chatModelCards.find((i) => i.id === model)?.deploymentName;
-      if (deploymentName) model = deploymentName;
-    }
-
     const payload = merge(
-      { model: DEFAULT_AGENT_CONFIG.model, stream: true, ...DEFAULT_AGENT_CONFIG.params },
+      { 
+        model: DEFAULT_AGENT_CONFIG.model,
+         stream: true, 
+         ...DEFAULT_AGENT_CONFIG.params 
+        },
       { ...res, model },
     );
 

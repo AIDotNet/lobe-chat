@@ -18,7 +18,7 @@ const Redirect = memo(() => {
   useEffect(() => {
     checkHasConversation().then((hasData) => {
       if (hasData) {
-        router.replace('/chat');
+        router.replace('/app');
       } else {
         router.replace('/welcome');
       }

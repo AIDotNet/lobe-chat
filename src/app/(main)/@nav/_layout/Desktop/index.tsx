@@ -10,7 +10,15 @@ import BottomActions from './BottomActions';
 import TopActions from './TopActions';
 
 const Nav = memo(() => {
+
+  // 获取当前query中的sharedId
+  const query = new URLSearchParams(window.location.search);
+  const sharedId = query.get('sharedId');
+
   const sidebarKey = useActiveTabKey();
+  if(sharedId){
+    return null;
+  }
   return (
     <SideNav
       avatar={<Avatar />}

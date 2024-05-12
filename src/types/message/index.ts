@@ -72,6 +72,16 @@ export interface ChatMessage extends BaseDataModel {
    * 观测链路 id
    */
   traceId?: string;
+
+  /**
+   * 分享id
+   */
+  sharedId?: string;
+
+  /**
+   * 应用id
+   */
+  applicationId?: string;
 }
 
 export type ChatMessageMap = Record<string, ChatMessage>;

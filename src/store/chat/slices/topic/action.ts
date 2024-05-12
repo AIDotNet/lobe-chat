@@ -124,23 +124,23 @@ export const chatTopic: StateCreator<
     let output = '';
 
     // 自动总结对话记录标题
-    await chatService.fetchPresetTaskResult({
-      onError: () => {
-        updateTopicTitleInSummary(topicId, topic.title);
-      },
-      onFinish: async (text) => {
-        await get().internal_updateTopic(topicId, { title: text });
-      },
-      onLoadingChange: (loading) => {
-        internal_updateTopicLoading(topicId, loading);
-      },
-      onMessageHandle: (x) => {
-        output += x;
-        updateTopicTitleInSummary(topicId, output);
-      },
-      params: await chainSummaryTitle(messages),
-      trace: get().getCurrentTracePayload({ traceName: TraceNameMap.SummaryTopicTitle, topicId }),
-    });
+    // await chatService.fetchPresetTaskResult({
+    //   onError: () => {
+    //     updateTopicTitleInSummary(topicId, topic.title);
+    //   },
+    //   onFinish: async (text) => {
+    //     await get().internal_updateTopic(topicId, { title: text });
+    //   },
+    //   onLoadingChange: (loading) => {
+    //     internal_updateTopicLoading(topicId, loading);
+    //   },
+    //   onMessageHandle: (x) => {
+    //     output += x;
+    //     updateTopicTitleInSummary(topicId, output);
+    //   },
+    //   params: await chainSummaryTitle(messages),
+    //   trace: get().getCurrentTracePayload({ traceName: TraceNameMap.SummaryTopicTitle, topicId }),
+    // });
   },
   favoriteTopic: async (id, favorite) => {
     await get().internal_updateTopic(id, { favorite });

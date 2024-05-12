@@ -1,8 +1,9 @@
 import { ActionIcon, DiscordIcon, Icon } from '@lobehub/ui';
-import { Badge } from 'antd';
+import { Badge, Button } from 'antd';
 import {
   Book,
   CircleUserRound,
+  ExternalLink,
   Feather,
   HardDriveDownload,
   HardDriveUpload,
@@ -21,41 +22,15 @@ import urlJoin from 'url-join';
 import type { MenuProps } from '@/components/Menu';
 import { DISCORD, DOCUMENTS, EMAIL_SUPPORT, GITHUB_ISSUES } from '@/const/url';
 import DataImporter from '@/features/DataImporter';
-import { useOpenSettings } from '@/hooks/useInterceptingRoutes';
 import { useQueryRoute } from '@/hooks/useQueryRoute';
 import { configService } from '@/services/config';
 import { SettingsTabs } from '@/store/global/initialState';
 import { useUserStore } from '@/store/user';
 import { authSelectors } from '@/store/user/selectors';
 
-import { useNewVersion } from './useNewVersion';
-
-const NewVersionBadge = memo(
-  ({
-    children,
-    showBadge,
-    onClick,
-  }: PropsWithChildren & { onClick: () => void; showBadge?: boolean }) => {
-    const { t } = useTranslation('common');
-    if (!showBadge)
-      return (
-        <Flexbox flex={1} onClick={onClick}>
-          {children}
-        </Flexbox>
-      );
-    return (
-      <Flexbox align={'center'} flex={1} gap={8} horizontal onClick={onClick} width={'100%'}>
-        <span>{children}</span>
-        <Badge count={t('upgradeVersion.hasNew')} />
-      </Flexbox>
-    );
-  },
-);
 
 export const useMenu = () => {
   const router = useQueryRoute();
-  const hasNewVersion = useNewVersion();
-  const openSettings = useOpenSettings();
   const { t } = useTranslation(['common', 'setting', 'auth']);
   const isSignedIn = useUserStore(authSelectors.isLoginWithAuth);
 
@@ -65,9 +40,6 @@ export const useMenu = () => {
       key: 'setting',
       label: (
         <Flexbox align={'center'} gap={8} horizontal>
-          <NewVersionBadge onClick={openSettings} showBadge={hasNewVersion}>
-            {t('userPanel.setting')}
-          </NewVersionBadge>
           <ActionIcon
             icon={Maximize}
             onClick={() => router.push(urlJoin('/settings', SettingsTabs.Common))}
@@ -182,6 +154,18 @@ export const useMenu = () => {
       icon: <Icon icon={LifeBuoy} />,
       key: 'help',
       label: t('userPanel.help'),
+    },
+    {
+      icon: <Icon icon={ExternalLink} />,
+      key: 'exit',
+      label: (
+        <span onClick={()=>{
+          window.localStorage.clear();
+          window.location.href = '/auth-login';
+        }}>
+          {t('userPanel.exit')}
+        </span>
+      ),
     },
     {
       type: 'divider',

@@ -12,7 +12,7 @@ const Token = memo(() => {
   const model = useAgentStore(agentSelectors.currentAgentModel);
   const showTag = useUserStore(modelProviderSelectors.isModelHasMaxToken(model));
 
-  return showTag && <LargeTokenContent />;
+  return <LargeTokenContent />;
 });
 
 export default Token;

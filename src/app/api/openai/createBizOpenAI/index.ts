@@ -12,7 +12,7 @@ import { createOpenai } from './createOpenai';
  * if auth not pass ,just return error response
  */
 export const createBizOpenAI = (req: Request): Response | OpenAI => {
-  const { apiKey, accessCode, endpoint, oauthAuthorized } = getOpenAIAuthFromRequest(req);
+  const { apiKey, accessCode, oauthAuthorized } = getOpenAIAuthFromRequest(req);
 
   const result = checkAuth({ accessCode, apiKey, oauthAuthorized });
 
@@ -23,7 +23,7 @@ export const createBizOpenAI = (req: Request): Response | OpenAI => {
   let openai: OpenAI;
 
   try {
-    openai = createOpenai(apiKey, endpoint);
+    openai = createOpenai(apiKey,null);
   } catch (error) {
     if ((error as Error).cause === ChatErrorType.NoOpenAIAPIKey) {
       return createErrorResponse(ChatErrorType.NoOpenAIAPIKey);

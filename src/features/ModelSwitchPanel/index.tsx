@@ -53,6 +53,16 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
     GetChatApplicationsList(1, 1000)
       .then((res) => {
         models = res.result;
+
+        // 增加functionCall = true
+        models = models.map((model) => {
+          return {
+            ...model,
+            functionCall: true,
+            maxOutput: model.maxResponseToken
+          };
+        })
+
         setItems([
           {
             id: '系统应用',
@@ -65,37 +75,22 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
             type: 'group',
           })));
       })
-      .catch((err) => {
-        console.error(err);
-      });
 
     const getModelItems = (provider: any) => {
+
+      if (provider.chatModels.length > 0) {
+        updateAgentConfig({ model: provider.chatModels[0].name, provider: provider.id });
+      }
+
       const items = provider.chatModels.map((model) => ({
-        key: model.id,
+        key: model.name,
         label: <ModelItemRender {...model} />,
         onClick: () => {
-          updateAgentConfig({ model: model.id, provider: provider.id });
+          updateAgentConfig({ model: model.name, provider: provider.id });
         },
       }));
 
       return items;
-
-      // if there is empty items, add a placeholder guide
-      // if (items.length === 0)
-      //   return [
-      //     {
-      //       key: 'empty',
-      //       label: (
-      //         <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
-      //           {t('ModelSwitchPanel.emptyModel')}
-      //           <Icon icon={LucideArrowRight} />
-      //         </Flexbox>
-      //       ),
-      //       onClick: () => {
-      //         router.push(withBasePath('/settings/llm'));
-      //       },
-      //     },
-      //   ];
     };
 
   }, []);

@@ -23,18 +23,18 @@ export const POST = checkAuth(async (req: Request, { params, jwtPayload }) => {
 
     const data = (await req.json()) as ChatStreamPayload;
 
-    const tracePayload = getTracePayload(req);
+    // const tracePayload = getTracePayload(req);
 
     // If user enable trace
-    if (tracePayload?.enabled) {
-      return await agentRuntime.chat(
-        data,
-        createTraceOptions(data, {
-          provider,
-          trace: tracePayload,
-        }),
-      );
-    }
+    // if (tracePayload?.enabled) {
+    //   return await agentRuntime.chat(
+    //     data,
+    //     createTraceOptions(data, {
+    //       provider,
+    //       trace: tracePayload,
+    //     }),
+    //   );
+    // }
     return await agentRuntime.chat(data);
   } catch (e) {
     const {

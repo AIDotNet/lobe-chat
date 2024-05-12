@@ -2,14 +2,15 @@
 
 import { Icon, MobileTabBar, type MobileTabBarProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { AppWindowMac, MessageSquare, SquareFunction, Album,User } from 'lucide-react';
+import { AppWindowMac, MessageSquare, SquareFunction, Album, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { rgba } from 'polished';
-import { memo, useMemo } from 'react';
+import { memo, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useActiveTabKey } from '@/hooks/useActiveTabKey';
 import { SidebarTabKey } from '@/store/global/initialState';
+import { GetUser } from '@/services/UserService';
 
 const useStyles = createStyles(({ css, token }) => ({
   active: css`
@@ -30,70 +31,68 @@ const Nav = memo(() => {
   const { t } = useTranslation('common');
   const { styles } = useStyles();
   const activeKey = useActiveTabKey();
+  const [items, setItems] = useState([]);
+
+
   const router = useRouter();
-  const items: MobileTabBarProps['items'] = useMemo(
-    () => [
-      {
-        icon: (active:any) => (
-          <Icon className={active ? styles.active : undefined} icon={MessageSquare} />
-        ),
-        key: SidebarTabKey.Chat,
-        onClick: () => {
-          router.push('/chat');
-        },
-        title: t('tab.chat'),
-      },
-      {
-        icon: (active:any) => (
-          <Icon className={active ? styles.active : undefined} icon={AppWindowMac} />
-        ),
-        key: SidebarTabKey.App,
-        onClick: () => {
-          router.push('/app');
-        },
-        title: t('tab.app'),
-      },
-      {
-        icon: (active:any) => (
-          <Icon className={active ? styles.active : undefined} icon={SquareFunction} />
-        ),
-        key: SidebarTabKey.FuncationCall,
-        onClick: () => {
-          router.push('/function-call');
-        },
-        title: t('tab.function-call'),
-      },
-      {
-        icon: (active:any) => (
-          <Icon className={active ? styles.active : undefined} icon={Album} />
-        ),
-        key: SidebarTabKey.Wiki,
-        onClick: () => {
-          router.push('/wiki');
-        },
-        title: t('tab.wiki'),
-      },
-      {
-        icon: (active:any) => (
-          <Icon className={active ? styles.active : undefined} icon={User} />
-        ),
-        key: SidebarTabKey.User,
-        onClick: () => {
-          router.push('/user');
-        },
-        title: t('tab.user'),
-      },
-      {
-        icon: (active:any) => <Icon className={active ? styles.active : undefined} icon={User} />,
-        key: SidebarTabKey.Me,
-        onClick: () => {
-          router.push('/me');
-        },
-        title: t('tab.me'),
-      },
-    ],
-    [t],
-  );
+
+  function getUser() {
+    GetUser()
+      .then((res) => {
+        let items = [
+          {
+            icon: (active: any) => (
+              <Icon className={active ? styles.active : undefined} icon={AppWindowMac} />
+            ),
+            key: SidebarTabKey.App,
+            onClick: () => {
+              router.push('/app');
+            },
+            title: t('tab.app'),
+          },
+          {
+            icon: (active: any) => (
+              <Icon className={active ? styles.active : undefined} icon={SquareFunction} />
+            ),
+            key: SidebarTabKey.FuncationCall,
+            onClick: () => {
+              router.push('/function-call');
+            },
+            title: t('tab.function-call'),
+          },
+          {
+            icon: (active: any) => (
+              <Icon className={active ? styles.active : undefined} icon={Album} />
+            ),
+            key: SidebarTabKey.Wiki,
+            onClick: () => {
+              router.push('/wiki');
+            },
+            title: t('tab.wiki'),
+          }
+        ];
+
+        if (res.role === 2) {
+          items.push(
+            {
+              icon: (active: any) => <Icon className={active ? styles.active : undefined} icon={User} />,
+              key: SidebarTabKey.Me,
+              onClick: () => {
+                router.push('/me');
+              },
+              title: t('tab.me'),
+            },
+          );
+        }
+
+        setItems(items);
+      })
+  }
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
 
   return <MobileTabBar activeKey={activeKey} className={styles.container} items={items} />;
 });

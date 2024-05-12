@@ -22,7 +22,6 @@ export const useSendMessage = () => {
     if (!store.inputMessage) return;
 
     const imageList = filesSelectors.imageUrlOrBase64List(useFileStore.getState());
-
     sendMessage({
       files: imageList,
       message: store.inputMessage,

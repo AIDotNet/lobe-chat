@@ -24,9 +24,6 @@ export default memo(() => {
     // 解析query
     const id = query.split('=')[1];
 
-
-    if (id === undefined) return (<div>id is undefined</div>)
-
     const [application, setApplication] = useState({} as any);
 
     const [tabs, setTabs] = useState([] as any[]);
@@ -34,14 +31,18 @@ export default memo(() => {
     const [tab, setTab] = useState() as any;
 
     useEffect(() => {
-        loadingApplication();
+        if(id){
+            loadingApplication();
+        }
     }, [id]);
 
     async function loadingApplication() {
-        GetChatApplications(id as string)
-            .then((application) => {
-                setApplication(application);
-            });
+        if(id){
+            GetChatApplications(id as string)
+                .then((application) => {
+                    setApplication(application);
+                });
+        }
     }
 
     useEffect(() => {

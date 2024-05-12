@@ -19,7 +19,9 @@ const MobileHeader = memo(() => {
   return (
     <MobileNavBar
       center={<ChatHeaderTitle />}
-      onBackClick={() => router.push('/chat', { query: { session: '' }, replace: true })}
+      onBackClick={() => 
+        router.push('/me', { query: { session: '' }, replace: true })
+      }
       right={
         <>
           <ShareButton mobile open={open} setOpen={setOpen} />

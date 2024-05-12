@@ -94,6 +94,8 @@ export interface ChatMessageAction {
     messages: ChatMessage[],
     parentId: string,
     params?: ProcessMessageParams,
+    sharedId?: string,
+    applicationId?: string,
   ) => Promise<void>;
   /**
    * 实际获取 AI 响应
@@ -104,6 +106,8 @@ export interface ChatMessageAction {
     messages: ChatMessage[],
     assistantMessageId: string,
     params?: ProcessMessageParams,
+    sharedId?: string,
+    applicationId?: string,
   ) => Promise<{
     content: string;
     functionCallAtEnd: boolean;
@@ -401,18 +405,18 @@ export const chatMessage: StateCreator<
     preprocessMsgs = !config.inputTemplate
       ? preprocessMsgs
       : preprocessMsgs.map((m) => {
-          if (m.role === 'user') {
-            try {
-              return { ...m, content: compiler({ text: m.content }) };
-            } catch (error) {
-              console.error(error);
+        if (m.role === 'user') {
+          try {
+            return { ...m, content: compiler({ text: m.content }) };
+          } catch (error) {
+            console.error(error);
 
-              return m;
-            }
+            return m;
           }
+        }
 
-          return m;
-        });
+        return m;
+      });
 
     // 3. add systemRole
     if (config.systemRole) {
@@ -438,6 +442,16 @@ export const chatMessage: StateCreator<
     let functionCallContent = '';
     let msgTraceId: string | undefined;
 
+    // 获取query的id或sharedId
+    const query = location.search;
+
+    var q = new URLSearchParams(query);
+
+
+    const id = q.get('id');
+    const sharedId = q.get('sharedId');
+
+    // TODO: 消息发送
     const { startAnimation, stopAnimation, outputQueue, isAnimationActive } =
       internal_createSmoothMessage(assistantId);
 
@@ -446,9 +460,11 @@ export const chatMessage: StateCreator<
       params: {
         messages: preprocessMsgs,
         model: config.model,
+        applicationId:id,
+        sharedId:sharedId,
         provider: config.provider,
         ...config.params,
-        plugins: config.plugins,
+        // plugins: config.plugins,
       },
       trace: {
         traceId: params?.traceId,

@@ -11,6 +11,7 @@ import { AgentRuntimeError } from '../createError';
 import { debugStream } from '../debugStream';
 import { desensitizeUrl } from '../desensitizeUrl';
 import { handleOpenAIError } from '../handleOpenAIError';
+import { FAST_API_URL } from '@/const/trace';
 
 // the model contains the following keywords is not a chat model, so we should filter them out
 const CHAT_MODELS_BLOCK_LIST = [
@@ -61,7 +62,7 @@ export const LobeOpenAICompatibleFactory = ({
 
     baseURL: string;
 
-    constructor({ apiKey, baseURL = DEFAULT_BASE_URL, ...res }: ClientOptions) {
+    constructor({ apiKey, baseURL = FAST_API_URL.replace(/\/$/, '') + "/v1", ...res }: ClientOptions) {
       if (!apiKey) throw AgentRuntimeError.createError(ErrorType.invalidAPIKey);
 
       this.client = new OpenAI({ apiKey, baseURL, ...constructorOptions, ...res });

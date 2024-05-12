@@ -12,11 +12,11 @@ const AgentSettings = (props: AgentSettingsProps) => {
   return (
     <Provider createStore={createStore}>
       <StoreUpdater {...props} />
-      <AgentPrompt />
+      {/* <AgentPrompt />
       <AgentMeta />
       <AgentChat />
       <AgentModal />
-      <AgentPlugin />
+      <AgentPlugin /> */}
     </Provider>
   );
 };

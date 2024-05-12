@@ -87,6 +87,16 @@ export interface ChatStreamPayload {
    * @default 1
    */
   top_p?: number;
+
+  /**
+   * @title 选择应用Id
+   */
+  applicationId?: string;
+
+  /**
+   * @title 分享Id
+   */
+  sharedId?: string;
 }
 
 export interface ChatCompletionFunctions {

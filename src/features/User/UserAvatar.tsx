@@ -61,7 +61,7 @@ const UserAvatar = memo<UserAvatarProps>(
 
       // 从缓存中获取用户头像
       var user = JSON.parse(localStorage.getItem('user') as string);
-      if (user.avatar) {
+      if (user && user.avatar) {
         return user.avatar;
       }
 

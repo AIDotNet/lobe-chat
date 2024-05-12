@@ -6,38 +6,12 @@ import { createJWT } from '@/utils/jwt';
 
 export const getProviderAuthPayload = (provider: string) => {
   switch (provider) {
-    case ModelProvider.Bedrock: {
-      const { accessKeyId, region, secretAccessKey } = modelConfigSelectors.bedrockConfig(
-        useUserStore.getState(),
-      );
-      const awsSecretAccessKey = secretAccessKey;
-      const awsAccessKeyId = accessKeyId;
-
-      const apiKey = (awsSecretAccessKey || '') + (awsAccessKeyId || '');
-
-      return { apiKey, awsAccessKeyId, awsRegion: region, awsSecretAccessKey };
-    }
-
-    case ModelProvider.Azure: {
-      const azure = modelConfigSelectors.azureConfig(useUserStore.getState());
-
-      return {
-        apiKey: azure.apiKey,
-        azureApiVersion: azure.apiVersion,
-        endpoint: azure.endpoint,
-      };
-    }
-
-    case ModelProvider.Ollama: {
-      const config = modelConfigSelectors.ollamaConfig(useUserStore.getState());
-
-      return { endpoint: config?.endpoint };
-    }
 
     default: {
+
       const config = settingsSelectors.providerConfig(provider)(useUserStore.getState());
 
-      return { apiKey: config?.apiKey, endpoint: config?.endpoint };
+      return { apiKey: localStorage.getItem('token'), endpoint: config?.endpoint };
     }
   }
 };

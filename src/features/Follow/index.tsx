@@ -38,7 +38,7 @@ const Follow = memo(() => {
           title={t('follow', { name: 'GitHub' })}
         />
       </Link>
-      <Link href={X} rel="noreferrer" target={'_blank'}>
+      {/* <Link href={X} rel="noreferrer" target={'_blank'}>
         <ActionIcon className={styles.icon} icon={SiX as any} title={t('follow', { name: 'X' })} />
       </Link>
       <Link href={DISCORD} rel="noreferrer" target={'_blank'}>
@@ -54,7 +54,7 @@ const Follow = memo(() => {
           icon={SiMedium as any}
           title={t('follow', { name: 'Medium' })}
         />
-      </Link>
+      </Link> */}
     </Flexbox>
   );
 });

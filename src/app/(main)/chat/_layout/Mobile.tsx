@@ -23,18 +23,18 @@ const Layout = memo<LayoutProps>(({ children, session }) => {
 
   return (
     <>
-      <Flexbox
+      {/* <Flexbox
         className={styles.main}
         height="100%"
-        style={showMobileWorkspace ? { display: 'none' } : undefined}
+        style={!showMobileWorkspace ? { display: 'none' } : undefined}
         width="100%"
       >
         {session}
-      </Flexbox>
+      </Flexbox> */}
       <Flexbox
         className={styles.main}
         height="100%"
-        style={showMobileWorkspace ? undefined : { display: 'none' }}
+        
         width="100%"
       >
         {children}
