@@ -12,7 +12,7 @@ import { useGlobalStore } from '@/store/global';
 
 const UpgradeAlert = memo(() => {
   const [hasNewVersion, latestVersion] = useGlobalStore((s) => [s.hasNewVersion, s.latestVersion]);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any;
 
   if (!hasNewVersion) return;
 

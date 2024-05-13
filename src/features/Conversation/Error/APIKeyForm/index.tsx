@@ -17,32 +17,12 @@ interface APIKeyFormProps {
 }
 
 const APIKeyForm = memo<APIKeyFormProps>(({ id, provider }) => {
-  const { t } = useTranslation('error');
+  const { t } = useTranslation('error')as any
 
   const [resend, deleteMessage] = useChatStore((s) => [s.regenerateMessage, s.deleteMessage]);
 
   const apiKeyPlaceholder = useMemo(() => {
     switch (provider) {
-      case ModelProvider.Anthropic: {
-        return 'sk-ant_*****************************';
-      }
-
-      case ModelProvider.OpenRouter: {
-        return 'sk-or-********************************';
-      }
-
-      case ModelProvider.Perplexity: {
-        return 'pplx-********************************';
-      }
-
-      case ModelProvider.ZhiPu: {
-        return '*********************.*************';
-      }
-
-      case ModelProvider.Groq: {
-        return 'gsk_*****************************';
-      }
-
       default: {
         return '*********************************';
       }
@@ -50,17 +30,14 @@ const APIKeyForm = memo<APIKeyFormProps>(({ id, provider }) => {
   }, [provider]);
 
   return (
-    <Center gap={16} style={{ maxWidth: 300 }}>
-      {provider === ModelProvider.Bedrock ? (
-        <BedrockForm />
-      ) : (
+    <Center gap={16} style={{ maxWidth: 300 }}> (
         <ProviderApiKeyForm
           apiKeyPlaceholder={apiKeyPlaceholder}
           avatar={<ProviderAvatar provider={provider as ModelProvider} />}
           provider={provider as GlobalLLMProviderKey}
           showEndpoint={provider === ModelProvider.OpenAI}
         />
-      )}
+      )
       <Flexbox gap={12} width={'100%'}>
         <Button
           block

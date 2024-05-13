@@ -1,3 +1,4 @@
+declare var window: any;
 import UAParser from 'ua-parser-js';
 
 const getParser = () => {

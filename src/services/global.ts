@@ -1,3 +1,4 @@
+declare var window: any;
 import { DeepPartial } from 'utility-types';
 
 import { dataSync } from '@/database/client/core';
@@ -20,7 +21,7 @@ class GlobalService {
   };
 
   getGlobalConfig = async (): Promise<GlobalServerConfig> => {
-    return trpcClient.config.getGlobalConfig.query();
+    return trpcClient.config.getGlobalConfig.query() as any;
   };
 
   getDefaultAgentConfig = async (): Promise<DeepPartial<LobeAgentConfig>> => {

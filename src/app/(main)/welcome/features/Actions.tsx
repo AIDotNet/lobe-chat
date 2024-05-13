@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 const Actions = memo<{ mobile?: boolean }>(({ mobile }) => {
-  const { t } = useTranslation('welcome');
+  const { t } = useTranslation('welcome') as any;
   const router = useRouter();
 
   return (

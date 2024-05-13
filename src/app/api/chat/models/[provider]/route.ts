@@ -12,18 +12,16 @@ export const runtime = 'edge';
 
 export const preferredRegion = getPreferredRegion();
 
-const noNeedAPIKey = (provider: string) =>
-  [ModelProvider.OpenRouter, ModelProvider.TogetherAI].includes(provider as any);
+const noNeedAPIKey = () =>
+  false;
 
 export const GET = checkAuth(async (req, { params, jwtPayload }) => {
   const { provider } = params;
 
   try {
-    const hasDefaultApiKey = jwtPayload.apiKey || 'dont-need-api-key-for-model-list';
-
     const agentRuntime = await initAgentRuntimeWithUserPayload(provider, {
       ...jwtPayload,
-      apiKey: noNeedAPIKey(provider) ? hasDefaultApiKey : jwtPayload.apiKey,
+      apiKey: jwtPayload.apiKey,
     });
 
     const list = await agentRuntime.models();

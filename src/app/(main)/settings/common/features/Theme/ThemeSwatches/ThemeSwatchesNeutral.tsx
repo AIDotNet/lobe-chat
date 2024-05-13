@@ -18,7 +18,7 @@ const ThemeSwatchesNeutral = memo(() => {
 
   const handleSelect = (v: any) => {
     const name = findCustomThemeName('neutral', v) as NeutralColors;
-    setSettings({ neutralColor: name || '' });
+    setSettings({ neutralColor: name  });
   };
 
   return (

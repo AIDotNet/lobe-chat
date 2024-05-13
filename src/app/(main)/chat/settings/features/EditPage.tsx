@@ -12,7 +12,7 @@ import { useSessionStore } from '@/store/session';
 import { sessionMetaSelectors } from '@/store/session/selectors';
 
 const EditPage = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const id = useSessionStore((s) => s.activeId);
   const config = useAgentStore(agentSelectors.currentAgentConfig, isEqual);
   const meta = useSessionStore(sessionMetaSelectors.currentAgentMeta, isEqual);

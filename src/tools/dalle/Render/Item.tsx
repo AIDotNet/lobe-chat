@@ -34,7 +34,7 @@ const useStyles = createStyles(({ css, token, prefixCls }) => ({
 
 const ImageItem = memo<DallEImageItem & { messageId: string }>(
   ({ prompt, messageId, imageId, previewUrl, style, size, quality }) => {
-    const { t } = useTranslation('tool');
+    const { t } = useTranslation('tool') as any;;
     const { styles } = useStyles();
 
     const [edit, setEdit] = useState(false);

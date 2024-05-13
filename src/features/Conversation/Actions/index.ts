@@ -19,7 +19,7 @@ export const renderActions: Record<LLMRoleType, RenderAction> = {
 };
 
 export const useActionsClick = (): OnActionsClick => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any;
   const [
     deleteMessage,
     regenerateMessage,

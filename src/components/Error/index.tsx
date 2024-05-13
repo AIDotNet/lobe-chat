@@ -17,7 +17,7 @@ interface ErrorCaptureProps {
 }
 
 const ErrorCapture = memo<ErrorCaptureProps>(({ reset, error }) => {
-  const { t } = useTranslation('error');
+  const { t } = useTranslation('error')as any;
 
   useLayoutEffect(() => {
     sentryCaptureException(error);

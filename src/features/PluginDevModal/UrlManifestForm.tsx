@@ -18,7 +18,7 @@ interface ProxyCheckerProps {
 }
 
 const ProxyChecker = memo<ProxyCheckerProps>(({ value, onChange }) => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;
 
   return (
     <Flexbox
@@ -36,7 +36,7 @@ const ProxyChecker = memo<ProxyCheckerProps>(({ value, onChange }) => {
 
 const UrlManifestForm = memo<{ form: FormInstance; isEditMode: boolean }>(
   ({ form, isEditMode }) => {
-    const { t } = useTranslation('plugin');
+    const { t } = useTranslation('plugin')as any;
 
     const [manifest, setManifest] = useState<LobeChatPluginManifest>();
 

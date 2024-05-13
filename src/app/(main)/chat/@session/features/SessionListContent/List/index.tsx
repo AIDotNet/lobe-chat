@@ -27,7 +27,7 @@ interface SessionListProps {
   showAddButton?: boolean;
 }
 const SessionList = memo<SessionListProps>(({ dataSource, groupId, showAddButton = true }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
   const isInit = useSessionStore((s) => sessionSelectors.isSessionListInit(s));
   const { showCreateSession } = useServerConfigStore(featureFlagsSelectors);
 

@@ -12,7 +12,7 @@ interface ChannelNameInputProps extends Omit<InputProps, 'form'> {
 }
 
 const ChannelNameInput = memo<ChannelNameInputProps>(({ form, ...rest }) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const [loading, setLoading] = useState(false);
 
   return (

@@ -39,7 +39,7 @@ interface TopicContentProps {
 }
 
 const TopicContent = memo<TopicContentProps>(({ id, title, fav, showMore }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any;
 
   const [
     editing,

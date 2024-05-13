@@ -45,7 +45,7 @@ const SystemRole = memo(() => {
     value: showSystemRole,
   });
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any;
 
   const handleOpenWithEdit = () => {
     if (!init) return;

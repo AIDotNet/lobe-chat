@@ -1,5 +1,5 @@
 'use client';
-
+declare var window: any;
 import { ActionIcon } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { shuffle } from 'lodash-es';
@@ -62,7 +62,7 @@ const qa = shuffle([
 const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   const [updateInputMessage] = useChatStore((s) => [s.updateInputMessage]);
 
-  const { t } = useTranslation('welcome');
+  const { t } = useTranslation('welcome')as any
   const { styles } = useStyles();
   const sendMessage = useSendMessage();
   const [qas, setQa] = useState<any[]>([]);
@@ -82,10 +82,12 @@ const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
         })
       return null;
     }
-    GetQuestions(id)
-      .then((res) => {
-        setQa(res)
-      })
+    if(id){
+      GetQuestions(id)
+        .then((res) => {
+          setQa(res)
+        })
+    }
   }
 
   useEffect(() => {

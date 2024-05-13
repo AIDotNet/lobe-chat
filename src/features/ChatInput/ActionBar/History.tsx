@@ -9,7 +9,7 @@ import { useAgentStore } from '@/store/agent';
 import { agentSelectors } from '@/store/agent/selectors';
 
 const History = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
 
   const [historyCount, unlimited, updateAgentConfig] = useAgentStore((s) => {
     const config = agentSelectors.currentAgentConfig(s);

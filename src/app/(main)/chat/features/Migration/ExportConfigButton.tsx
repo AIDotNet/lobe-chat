@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const ExportConfigButton = memo<{ primary?: boolean; state: any }>(({ state, primary }) => {
-  const { t } = useTranslation('migration');
+  const { t } = useTranslation('migration')as any
 
   const exportData = () => {
     const config = { exportType: 'sessions', state, version: 1 };

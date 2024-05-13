@@ -18,7 +18,7 @@ import { Placeholder, SkeletonList } from './SkeletonList';
 import TopicItem from './TopicItem';
 
 export const Topic = memo<{ mobile?: boolean }>(({ mobile }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any;
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const { isDarkMode } = useThemeMode();
   const [topicsInit, activeTopicId, topicLength] = useChatStore((s) => [

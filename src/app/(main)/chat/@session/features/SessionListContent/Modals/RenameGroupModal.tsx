@@ -12,7 +12,7 @@ interface RenameGroupModalProps extends ModalProps {
 }
 
 const RenameGroupModal = memo<RenameGroupModalProps>(({ id, open, onCancel }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any;
 
   const updateSessionGroupName = useSessionStore((s) => s.updateSessionGroupName);
   const group = useSessionStore((s) => sessionGroupSelectors.getGroupById(id)(s), isEqual);

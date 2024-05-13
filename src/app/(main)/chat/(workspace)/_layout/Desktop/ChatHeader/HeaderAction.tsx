@@ -13,7 +13,7 @@ import SettingButton from '../../../features/SettingButton';
 import ShareButton from '../../../features/ShareButton';
 
 const HeaderAction = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
 
   const [showAgentSettings, toggleConfig] = useGlobalStore((s) => [
     s.preference.showChatSideBar,

@@ -197,6 +197,7 @@
     "commitlint": "^19.3.0",
     "consola": "^3.2.3",
     "dpdm": "^3.14.0",
+    "eslint": "^9.2.0",
     "eslint-plugin-mdx": "^2.3.4",
     "fake-indexeddb": "^5.0.2",
     "glob": "^10.3.12",

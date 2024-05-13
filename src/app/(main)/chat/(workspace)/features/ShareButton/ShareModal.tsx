@@ -48,9 +48,9 @@ const DEFAULT_FIELD_VALUE: FieldType = {
 const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
   const [fieldValue, setFieldValue] = useState<FieldType>(DEFAULT_FIELD_VALUE);
   const [tab, setTab] = useState<Tab>(Tab.Screenshot);
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
   const avatar = useUserStore(userProfileSelectors.userAvatar);
-  const [shareLoading, shareToShareGPT] = useChatStore((s) => [s.shareLoading, s.shareToShareGPT]);
+  // const [shareLoading, shareToShareGPT] = useChatStore((s) => [s.shareLoading, s.shareToShareGPT]);
   const { loading, onDownload, title } = useScreenshot(fieldValue.imageType);
 
   const options: SegmentedProps['options'] = useMemo(
@@ -122,7 +122,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
               {t('shareModal.download')}
             </Button>
           )}
-          {tab === Tab.ShareGPT && (
+          {/* {tab === Tab.ShareGPT && (
             <Button
               block
               loading={shareLoading}
@@ -132,7 +132,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
             >
               {t('shareModal.shareToShareGPT')}
             </Button>
-          )}
+          )} */}
         </>
       }
       maxHeight={false}

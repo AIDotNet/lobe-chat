@@ -58,7 +58,7 @@ const useStyles = createStyles(({ css, token, isDarkMode }) => ({
 const TelemetryNotification = memo<{ mobile?: boolean }>(({ mobile }) => {
   const { styles, theme, cx } = useStyles();
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any
   const shouldCheck = useServerConfigStore(serverConfigSelectors.enabledTelemetryChat);
   const isPreferenceInit = useUserStore(preferenceSelectors.isPreferenceInit);
 

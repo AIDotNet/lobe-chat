@@ -13,7 +13,7 @@ interface CreateGroupModalProps extends ModalProps {
 
 const CreateGroupModal = memo<CreateGroupModalProps>(
   ({ id, open, onCancel }: CreateGroupModalProps) => {
-    const { t } = useTranslation('chat');
+    const { t } = useTranslation('chat')as any
 
     const toggleExpandSessionGroup = useGlobalStore((s) => s.toggleExpandSessionGroup);
     const { message } = App.useApp();

@@ -37,7 +37,7 @@ interface ActionProps {
 
 const Actions = memo<ActionProps>(({ group, id, openCreateGroupModal, setOpen }) => {
   const { styles } = useStyles();
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
 
   const sessionCustomGroups = useSessionStore(sessionGroupSelectors.sessionGroupItems, isEqual);
   const [pin, removeSession, pinSession, duplicateSession, updateSessionGroup] = useSessionStore(

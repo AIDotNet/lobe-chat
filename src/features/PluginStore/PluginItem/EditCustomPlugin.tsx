@@ -9,7 +9,7 @@ import { useToolStore } from '@/store/tool';
 import { pluginSelectors } from '@/store/tool/slices/plugin/selectors';
 
 const EditCustomPlugin = memo<{ identifier: string }>(({ identifier }) => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;;
   const [showModal, setModal] = useState(false);
 
   const [installCustomPlugin, updateNewDevPlugin, uninstallCustomPlugin] = useToolStore((s) => [

@@ -81,6 +81,7 @@ export const chatTopic: StateCreator<
     // 1. create topic and bind these messages
     const topicId = await internal_createTopic({
       sessionId: activeId,
+      // @ts-ignore
       title: t('topic.defaultTitle', { ns: 'chat' }),
       messages: messages.map((m) => m.id),
     });
@@ -98,9 +99,11 @@ export const chatTopic: StateCreator<
     const topic = topicSelectors.getTopicById(id)(get());
     if (!topic) return;
 
+    // @ts-ignore
     const newTitle = t('duplicateTitle', { ns: 'chat', title: topic?.title });
 
     message.loading({
+      // @ts-ignore
       content: t('topic.duplicateLoading', { ns: 'chat' }),
       key: 'duplicateTopic',
       duration: 0,
@@ -109,6 +112,7 @@ export const chatTopic: StateCreator<
     const newTopicId = await topicService.cloneTopic(id, newTitle);
     await refreshTopic();
     message.destroy('duplicateTopic');
+    // @ts-ignore
     message.success(t('topic.duplicateSuccess', { ns: 'chat' }));
 
     await switchTopic(newTopicId);

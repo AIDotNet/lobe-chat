@@ -16,7 +16,7 @@ interface DisableSyncProps {
 }
 
 const DisableSync = memo<DisableSyncProps>(({ noPopover, placement = 'bottomLeft' }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any;;
   const [haveConfig, setSettings] = useUserStore((s) => [
     !!syncSettingsSelectors.webrtcConfig(s).channelName,
     s.setSettings,

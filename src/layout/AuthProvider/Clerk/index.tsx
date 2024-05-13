@@ -11,7 +11,7 @@ const Clerk = memo(({ children }: PropsWithChildren) => {
   const appearance = useAppearance();
   const {
     i18n: { language, getResourceBundle },
-  } = useTranslation('clerk');
+  } = useTranslation('clerk') as any;;
 
   const localization = useMemo(() => getResourceBundle(language, 'clerk'), [language]);
 

@@ -11,7 +11,7 @@ interface EditModeProps extends DallEImageItem {
 }
 
 const EditMode = memo<EditModeProps>(({ prompt, setEdit, style, size, quality }) => {
-  const { t } = useTranslation('tool');
+  const { t } = useTranslation('tool') as any;;
 
   return (
     <Flexbox gap={16}>

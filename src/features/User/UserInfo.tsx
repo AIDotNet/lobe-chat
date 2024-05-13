@@ -30,7 +30,7 @@ export interface UserInfoProps extends FlexboxProps {
 
 const UserInfo = memo<UserInfoProps>(({ avatarProps, ...rest }: any) => {
   const { styles, theme } = useStyles();
-  const [user, setUser] = useState({ avatar: '' });
+  const [user, setUser] = useState({ avatar: '' } as any);
 
   const [username] = useUserStore((s) => [
     userProfileSelectors.nickName(s),

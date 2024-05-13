@@ -17,7 +17,7 @@ import ChannelNameInput from './ChannelNameInput';
 type SettingItemGroup = ItemGroup;
 
 const WebRTC = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const [form] = Form.useForm();
 
   const [setSettings] = useUserStore((s) => [s.setSettings]);

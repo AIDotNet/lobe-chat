@@ -26,7 +26,7 @@ const DevModal = memo<DevModalProps>(
   ({ open, mode = 'create', value, onValueChange, onSave, onOpenChange, onDelete }) => {
     const isEditMode = mode === 'edit';
     const [configMode, setConfigMode] = useState<'url' | 'local'>('url');
-    const { t } = useTranslation('plugin');
+    const { t } = useTranslation('plugin') as any;
     const { message } = App.useApp();
     const [submitting, setSubmitting] = useState(false);
     const { mobile } = useResponsive();
@@ -120,7 +120,7 @@ const DevModal = memo<DevModalProps>(
           >
             <Alert
               message={
-                <Trans i18nKey={'dev.modalDesc'} ns={'plugin'}>
+                <Trans  ns={'plugin'}>
                   添加自定义插件后，可用于插件开发验证，也可直接在会话中使用。插件开发文档请参考：
                   <a
                     href={WIKI_PLUGIN_GUIDE}

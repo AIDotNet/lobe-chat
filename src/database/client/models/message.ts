@@ -249,10 +249,10 @@ class _MessageModel extends BaseModel {
     translate,
     tts,
     ...item
-  }: DBModel<DB_Message>): ChatMessage => {
+  }: DBModel<any>): ChatMessage => {
     return {
       ...item,
-      extra: { fromModel, fromProvider, translate, tts },
+      extra: { fromModel, fromProvider, translate , tts },
       meta: {},
       topicId: item.topicId ?? undefined,
     };

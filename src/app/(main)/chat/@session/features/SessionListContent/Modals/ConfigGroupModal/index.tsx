@@ -28,7 +28,7 @@ const useStyles = createStyles(({ css, token, stylish }) => ({
 }));
 
 const ConfigGroupModal = memo<ModalProps>(({ open, onCancel }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any
   const { styles } = useStyles();
   const sessionGroupItems = useSessionStore(sessionGroupSelectors.sessionGroupItems, isEqual);
   const [addSessionGroup, updateSessionGroupSort] = useSessionStore((s) => [

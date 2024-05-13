@@ -14,7 +14,7 @@ const Topics = memo(({ children }: PropsWithChildren) => {
     s.toggleMobileTopic,
   ]);
   const [open, setOpen] = useWorkspaceModal(showAgentSettings, toggleConfig);
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
 
   return (
     <Modal allowFullscreen onCancel={() => setOpen(false)} open={open} title={t('topic.title')}>

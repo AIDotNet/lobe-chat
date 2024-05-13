@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { DOCUMENTS, GITHUB } from '@/const/url';
 
 const BottomActions = memo(() => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any;
 
   return (
     <>

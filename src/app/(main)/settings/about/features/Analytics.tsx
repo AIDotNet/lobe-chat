@@ -12,7 +12,7 @@ import { preferenceSelectors } from '@/store/user/selectors';
 type SettingItemGroup = ItemGroup;
 
 const Analytics = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const checked = useUserStore(preferenceSelectors.userAllowTrace);
   const [updatePreference] = useUserStore((s) => [s.updatePreference]);
 

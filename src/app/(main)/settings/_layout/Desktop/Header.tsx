@@ -29,7 +29,7 @@ const Header = memo<PropsWithChildren & Pick<DrawerProps, 'getContainer'>>(
   ({ children, getContainer }) => {
     const [open, setOpen] = useState(false);
     const { styles, theme } = useStyles();
-    const { t } = useTranslation('setting');
+    const { t } = useTranslation('setting') as any;
 
     const activeKey = useActiveSettingsKey();
 

@@ -35,6 +35,7 @@ const enabledSchema =
   (s: ToolStoreState): ChatCompletionTool[] => {
     const list = pluginSelectors
       .installedPluginManifestList(s)
+      // @ts-ignore
       .concat(s.builtinTools.map((b) => b.manifest as LobeChatPluginManifest))
       // 如果存在 enabledPlugins，那么只启用 enabledPlugins 中的插件
       .filter((m) => tools.includes(m?.identifier))
@@ -54,6 +55,7 @@ const enabledSystemRoles =
   (s: ToolStoreState) => {
     const toolsSystemRole = pluginSelectors
       .installedPluginManifestList(s)
+      // @ts-ignore
       .concat(s.builtinTools.map((b) => b.manifest as LobeChatPluginManifest))
       // 如果存在 enabledPlugins，那么只启用 enabledPlugins 中的插件
       .filter((m) => tools.includes(m?.identifier))
@@ -104,6 +106,7 @@ const getManifestById =
   (s: ToolStoreState): LobeChatPluginManifest | undefined =>
     pluginSelectors
       .installedPluginManifestList(s)
+      // @ts-ignore
       .concat(s.builtinTools.map((b) => b.manifest as LobeChatPluginManifest))
       .find((i) => i.identifier === id);
 

@@ -39,7 +39,7 @@ export interface ChatListItemProps {
 
 const Item = memo<ChatListItemProps>(({ index, id }) => {
   const fontSize = useUserStore((s) => settingsSelectors.currentSettings(s).fontSize);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any;
   const { styles, cx } = useStyles();
   const [type = 'chat'] = useAgentStore((s) => {
     const config = agentSelectors.currentAgentConfig(s);

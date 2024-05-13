@@ -13,7 +13,7 @@ import AddPluginButton from './AddPluginButton';
 import PluginItem from './PluginItem';
 
 export const InstalledPluginList = memo(() => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;;
   const [keywords, setKeywords] = useState<string>();
   const mobile = useServerConfigStore((s) => s.isMobile);
   const installedPlugins = useToolStore(pluginSelectors.installedPluginMetaList, isEqual);

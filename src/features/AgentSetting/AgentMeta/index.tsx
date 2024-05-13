@@ -22,7 +22,7 @@ import BackgroundSwatches from './BackgroundSwatches';
 const EmojiPicker = dynamic(() => import('@lobehub/ui/es/EmojiPicker'), { ssr: false });
 
 const AgentMeta = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
 
   const [hasSystemRole, updateMeta, autocompleteMeta, autocompleteAllMeta] = useStore((s) => [
     !!s.config.systemRole,
@@ -67,7 +67,7 @@ const AgentMeta = memo(() => {
           loading={loading[item.key as keyof SessionLoadingState]}
           onChange={item.onChange}
           onGenerate={() => {
-            autocompleteMeta(item.key as keyof typeof meta);
+            autocompleteMeta(item.key as any);
           }}
           placeholder={item.placeholder}
           value={meta[item.key as keyof typeof meta]}

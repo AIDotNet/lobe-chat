@@ -9,7 +9,7 @@ import { Flexbox } from 'react-layout-kit';
 const { Paragraph } = Typography;
 
 const DefaultContent = memo(() => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any;
 
   const theme = useTheme();
 

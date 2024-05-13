@@ -29,10 +29,10 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 const Nav = memo(() => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any;
   const { styles } = useStyles();
   const activeKey = useActiveTabKey();
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([] as any[]);
 
 
   const router = useRouter();

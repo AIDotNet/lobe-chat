@@ -12,7 +12,7 @@ import { useChatStore } from '@/store/chat';
 import { FormAction } from './style';
 
 const OAuthForm = memo<{ id: string }>(({ id }) => {
-  const { t } = useTranslation('error');
+  const { t } = useTranslation('error')as any
 
   const { user, isOAuthLoggedIn } = useOAuthSession();
 

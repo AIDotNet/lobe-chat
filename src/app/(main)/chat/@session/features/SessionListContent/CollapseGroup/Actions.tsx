@@ -25,7 +25,7 @@ type MenuItemType = ItemOfType<MenuProps['items']>;
 
 const Actions = memo<ActionsProps>(
   ({ id, openRenameModal, openConfigModal, onOpenChange, isCustomGroup, isPinned }) => {
-    const { t } = useTranslation('chat');
+    const { t } = useTranslation('chat')as any
     const { styles } = useStyles();
     const { modal, message } = App.useApp();
 

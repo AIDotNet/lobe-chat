@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useSessionStore } from '@/store/session';
 
 const SessionSearchBar = memo<{ mobile?: boolean }>(({ mobile }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
 
   const [keywords, useSearchSessions, updateSearchKeywords] = useSessionStore((s) => [
     s.sessionSearchKeywords,

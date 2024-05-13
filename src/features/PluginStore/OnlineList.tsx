@@ -16,7 +16,7 @@ import Loading from './Loading';
 import PluginItem from './PluginItem';
 
 export const OnlineList = memo(() => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;;
   const [keywords, setKeywords] = useState<string>();
   const mobile = useServerConfigStore((s) => s.isMobile);
   const pluginStoreList = useToolStore((s) => {

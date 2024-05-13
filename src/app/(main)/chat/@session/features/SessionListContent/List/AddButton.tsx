@@ -9,7 +9,7 @@ import { useActionSWR } from '@/libs/swr';
 import { useSessionStore } from '@/store/session';
 
 const AddButton = memo<{ groupId?: string }>(({ groupId }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
   const createSession = useSessionStore((s) => s.createSession);
 
   const { mutate, isValidating } = useActionSWR(['session.createSession', groupId], () => {

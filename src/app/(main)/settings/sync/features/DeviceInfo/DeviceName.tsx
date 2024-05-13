@@ -10,7 +10,7 @@ import { useUserStore } from '@/store/user';
 import { syncSettingsSelectors } from '@/store/user/selectors';
 
 const DeviceName = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
 
   const [deviceName, setSettings] = useUserStore((s) => [
     syncSettingsSelectors.deviceName(s),

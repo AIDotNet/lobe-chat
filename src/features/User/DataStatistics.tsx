@@ -71,7 +71,7 @@ const DataStatistics = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest })
   const { data: messagesToday } = useSWR('today-messages', messageService.countTodayMessages);
 
   const { styles, theme } = useStyles();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any;;
 
   const loading = useMemo(() => <Icon icon={LoaderCircle} spin />, []);
 

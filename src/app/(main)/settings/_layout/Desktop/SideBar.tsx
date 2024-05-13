@@ -37,7 +37,7 @@ interface SidebarLayoutProps extends FlexboxProps {
 
 const SidebarLayout = ({ children, className, title, desc, ...rest }: SidebarLayoutProps) => {
   const { cx, styles } = useStyles();
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   return (
     <Flexbox
       className={cx(styles.container, className)}

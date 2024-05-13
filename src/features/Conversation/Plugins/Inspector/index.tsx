@@ -43,7 +43,7 @@ const Inspector = memo<InspectorProps>(
     id = 'unknown',
     // type,
   }) => {
-    const { t } = useTranslation('plugin');
+    const { t } = useTranslation('plugin')as any
     const { styles } = useStyles();
     const [open, setOpen] = useState(false);
 

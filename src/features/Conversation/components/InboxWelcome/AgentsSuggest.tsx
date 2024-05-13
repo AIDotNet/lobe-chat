@@ -55,7 +55,7 @@ const useStyles = createStyles(({ css, token, responsive }) => ({
 }));
 
 const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
-  const { t } = useTranslation('welcome');
+  const { t } = useTranslation('welcome')as any
 
   const [sliceStart, setSliceStart] = useState(0);
   const useFetchAgentList = useMarketStore((s) => s.useFetchAgentList);

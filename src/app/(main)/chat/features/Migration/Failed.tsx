@@ -34,7 +34,7 @@ interface FailedProps {
   upgradeStatus: UpgradeStatus;
 }
 const Failed = memo<FailedProps>(({ error, state, setUpgradeStatus, setError, upgradeStatus }) => {
-  const { t } = useTranslation('migration');
+  const { t } = useTranslation('migration')as any;
   const theme = useTheme();
 
   return (
@@ -93,7 +93,7 @@ const Failed = memo<FailedProps>(({ error, state, setUpgradeStatus, setError, up
       style={{ paddingBlock: 24, width: 450 }}
       subTitle={
         <Balancer>
-          <Trans i18nKey="dbV1.upgrade.error.subTitle" ns={'migration'}>
+          <Trans  ns={'migration'}>
             非常抱歉，数据库升级过程发生异常。请重试升级，或
             <Link
               aria-label={'issue'}

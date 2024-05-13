@@ -28,7 +28,7 @@ const useStyles = createStyles(({ css, token }) => {
 
 const Follow = memo(() => {
   const { styles } = useStyles();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any
   return (
     <Flexbox gap={8} horizontal>
       <Link href={GITHUB} rel="noreferrer" target={'_blank'}>

@@ -11,7 +11,7 @@ import { useUserStore } from '@/store/user';
 import { preferenceSelectors } from '@/store/user/selectors';
 
 const Avatar = memo(() => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any;
   const hideSettingsMoveGuide = useUserStore(preferenceSelectors.hideSettingsMoveGuide);
   const updateGuideState = useUserStore((s) => s.updateGuideState);
   const content = (

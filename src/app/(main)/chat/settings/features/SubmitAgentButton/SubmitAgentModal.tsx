@@ -20,7 +20,7 @@ import { useUserStore } from '@/store/user';
 import { settingsSelectors } from '@/store/user/selectors';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const [identifier, setIdentifier] = useState('');
   const systemRole = useAgentStore(agentSelectors.currentAgentSystemRole);
   const theme = useTheme();

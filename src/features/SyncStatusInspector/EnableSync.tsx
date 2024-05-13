@@ -36,7 +36,7 @@ interface EnableSyncProps {
 }
 
 const EnableSync = memo<EnableSyncProps>(({ hiddenActions, placement = 'bottomLeft' }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any;;
 
   const { styles, theme } = useStyles();
   const [syncStatus, isSyncing, channelName, enableWebRTC, setSettings] = useUserStore((s) => [

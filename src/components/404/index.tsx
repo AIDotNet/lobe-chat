@@ -10,7 +10,7 @@ import { Flexbox } from 'react-layout-kit';
 import { MAX_WIDTH } from '@/const/layoutTokens';
 
 const NotFound = memo(() => {
-  const { t } = useTranslation('error');
+  const { t } = useTranslation('error')as any;
   return (
     <Flexbox align={'center'} justify={'center'} style={{ height: '100%', width: '100%' }}>
       <h1

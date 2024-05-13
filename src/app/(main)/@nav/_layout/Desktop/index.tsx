@@ -1,5 +1,5 @@
 'use client';
-
+declare var window: any;
 import { SideNav } from '@lobehub/ui';
 import { memo } from 'react';
 
@@ -12,6 +12,9 @@ import TopActions from './TopActions';
 const Nav = memo(() => {
 
   // 获取当前query中的sharedId
+  if(typeof window === 'undefined' || !window){
+    return null;
+  }
   const query = new URLSearchParams(window.location.search);
   const sharedId = query.get('sharedId');
 

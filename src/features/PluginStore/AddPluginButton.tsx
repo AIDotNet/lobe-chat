@@ -8,7 +8,7 @@ import DevModal from '@/features/PluginDevModal';
 import { useToolStore } from '@/store/tool';
 
 const AddPluginButton = forwardRef<HTMLButtonElement>((props, ref) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;;
   const [showModal, setModal] = useState(false);
 
   const [installCustomPlugin, updateNewDevPlugin] = useToolStore((s) => [

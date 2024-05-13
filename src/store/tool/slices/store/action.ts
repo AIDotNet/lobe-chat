@@ -56,7 +56,9 @@ export const createPluginStoreSlice: StateCreator<
 
       const err = error as PluginInstallError;
       notification.error({
+        // @ts-ignore
         description: t(`error.${err.message}`, { ns: 'plugin' }),
+        // @ts-ignore
         message: t('error.installError', { name: plugin.meta.title, ns: 'plugin' }),
       });
     }

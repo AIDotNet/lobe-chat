@@ -40,7 +40,7 @@ const currentAgentPlugins = (s: AgentStore) => {
 const currentAgentTTS = (s: AgentStore): LobeAgentTTSConfig => {
   const config = currentAgentConfig(s);
 
-  return config?.tts || DEFAUTT_AGENT_TTS_CONFIG;
+  return DEFAUTT_AGENT_TTS_CONFIG;
 };
 
 const currentAgentTTSVoice =

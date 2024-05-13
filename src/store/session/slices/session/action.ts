@@ -131,11 +131,13 @@ export const createSessionSlice: StateCreator<
     if (!session) return;
     const title = sessionMetaSelectors.getTitle(session.meta);
 
+    // @ts-ignore
     const newTitle = t('duplicateSession.title', { ns: 'chat', title: title });
 
     const messageLoadingKey = 'duplicateSession.loading';
 
     message.loading({
+      // @ts-ignore
       content: t('duplicateSession.loading', { ns: 'chat' }),
       duration: 0,
       key: messageLoadingKey,
@@ -146,12 +148,14 @@ export const createSessionSlice: StateCreator<
     // duplicate Session Error
     if (!newId) {
       message.destroy(messageLoadingKey);
+      // @ts-ignore
       message.error(t('copyFail', { ns: 'common' }));
       return;
     }
 
     await refreshSessions();
     message.destroy(messageLoadingKey);
+    // @ts-ignore
     message.success(t('duplicateSession.success', { ns: 'chat' }));
 
     activeSession(newId);

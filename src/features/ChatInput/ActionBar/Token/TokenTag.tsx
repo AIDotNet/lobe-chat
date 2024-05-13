@@ -17,7 +17,7 @@ import { modelProviderSelectors } from '@/store/user/selectors';
 const format = (number: number) => numeral(number).format('0,0');
 
 const Token = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any;
 
   const [input, messageString] = useChatStore((s) => [
     s.inputMessage,

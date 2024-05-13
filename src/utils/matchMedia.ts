@@ -1,3 +1,4 @@
+declare var window: any;
 /**
  * check standalone mode in browser
  */

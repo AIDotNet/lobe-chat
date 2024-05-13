@@ -15,8 +15,8 @@ export const parseModelString = (modelString: string = '', withDeploymentName = 
   for (const item of modelNames) {
     const disable = item.startsWith('-');
     const nameConfig = item.startsWith('+') || item.startsWith('-') ? item.slice(1) : item;
-    const [idAndDisplayName, ...capabilities] = nameConfig.split('<');
-    let [id, displayName] = idAndDisplayName.split('=');
+    const [idAndname, ...capabilities] = nameConfig.split('<');
+    let [id, name] = idAndname.split('=');
 
     let deploymentName: string | undefined;
 
@@ -41,7 +41,7 @@ export const parseModelString = (modelString: string = '', withDeploymentName = 
     }
 
     const model: ChatModelCard = {
-      displayName: displayName || undefined,
+      name: name || undefined,
       id,
     };
 
@@ -120,12 +120,12 @@ export const transformToChatModelCards = ({
         if (modelInList) {
           // if (modelInList.hidden) delete modelInList.hidden;
           modelInList.enabled = true;
-          if (toAddModel.displayName) modelInList.displayName = toAddModel.displayName;
+          if (toAddModel.name) modelInList.name = toAddModel.name;
         } else {
           // if the model is not in chatModels, add it
           draft.push({
             ...knownModel,
-            displayName: toAddModel.displayName || knownModel.displayName || knownModel.id,
+            name: toAddModel.name || knownModel.name || knownModel.id,
             enabled: true,
           });
         }
@@ -133,7 +133,7 @@ export const transformToChatModelCards = ({
         // if the model is not in LOBE_DEFAULT_MODEL_LIST, add it as a new custom model
         draft.push({
           ...toAddModel,
-          displayName: toAddModel.displayName || toAddModel.id,
+          name: toAddModel.name || toAddModel.id,
           enabled: true,
         });
       }

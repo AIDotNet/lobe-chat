@@ -26,7 +26,7 @@ const PluginDetailModal = memo<PluginDetailModalProps>(
       onChange: onTabChange,
       value: tab,
     });
-    const { t } = useTranslation('plugin');
+    const { t } = useTranslation('plugin') as any;
 
     const hasSettings = pluginHelpers.isSettingSchemaNonEmpty(schema);
 

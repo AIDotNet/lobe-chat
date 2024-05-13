@@ -9,7 +9,7 @@ import { DESKTOP_HEADER_ICON_SIZE, MOBILE_HEADER_ICON_SIZE } from '@/const/layou
 import { useOpenChatSettings } from '@/hooks/useInterceptingRoutes';
 
 const SettingButton = memo<{ mobile?: boolean }>(({ mobile }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any
   const openChatSettings = useOpenChatSettings();
 
   return (

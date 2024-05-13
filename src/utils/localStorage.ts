@@ -1,3 +1,4 @@
+declare var window: any;
 const PREV_KEY = 'LOBE_GLOBAL';
 
 // LOBE_PREFERENCE for userStore

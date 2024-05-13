@@ -11,7 +11,7 @@ import { useSessionStore } from '@/store/session';
 import ListItem from '../ListItem';
 
 const Inbox = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
   const mobile = useServerConfigStore((s) => s.isMobile);
   const activeId = useSessionStore((s) => s.activeId);
 

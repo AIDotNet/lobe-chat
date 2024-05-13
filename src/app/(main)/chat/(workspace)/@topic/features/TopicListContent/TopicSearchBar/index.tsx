@@ -9,7 +9,7 @@ import { useChatStore } from '@/store/chat';
 import { useServerConfigStore } from '@/store/serverConfig';
 
 const TopicSearchBar = memo<{ onClear?: () => void }>(({ onClear }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any;
 
   const [keywords, setKeywords] = useState('');
   const mobile = useServerConfigStore((s) => s.isMobile);

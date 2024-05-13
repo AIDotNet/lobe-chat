@@ -15,7 +15,7 @@ interface PlayerProps extends AudioPlayerProps {
 }
 
 const Player = memo<PlayerProps>(({ onRetry, error, onDelete, audio, isLoading, onInitPlay }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
 
   return (
     <Flexbox align={'center'} horizontal style={{ minWidth: 200, width: '100%' }}>

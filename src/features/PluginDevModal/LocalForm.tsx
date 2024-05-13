@@ -14,7 +14,7 @@ const EmojiPicker = dynamic(() => import('@lobehub/ui/es/EmojiPicker'), { ssr: f
 const LocalForm = memo<{ form: FormInstance; mode?: 'edit' | 'create' }>(({ form, mode }) => {
   const isEditMode = mode === 'edit';
   const locale = useUserStore(settingsSelectors.currentLanguage);
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;
 
   const pluginIds = useToolStore(pluginSelectors.storeAndInstallPluginsIdList);
 

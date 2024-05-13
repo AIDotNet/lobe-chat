@@ -23,7 +23,7 @@ interface Props {
 }
 
 export default memo<Props>(({ className, tabBarKey }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any
   const { styles } = useStyles();
   const openSettings = useOpenSettings();
   const router = useRouter();

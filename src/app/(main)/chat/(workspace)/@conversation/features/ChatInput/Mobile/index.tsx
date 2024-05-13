@@ -13,7 +13,7 @@ import { useChatInput } from '@/features/ChatInput/useChatInput';
 import Files from './Files';
 
 const MobileChatInput = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any;
   const theme = useTheme();
   const { ref, onSend, loading, value, onInput, onStop, expand, setExpand } = useChatInput();
 

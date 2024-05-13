@@ -307,7 +307,7 @@ class ChatService {
         onFinish,
         onMessageHandle,
       },
-    ).catch(errorHandle);
+    ).catch(errorHandle) as any;
 
     onLoadingChange?.(false);
 

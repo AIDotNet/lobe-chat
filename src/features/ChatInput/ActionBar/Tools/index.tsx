@@ -34,7 +34,7 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
 }));
 
 const Tools = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const list = useToolStore(pluginSelectors.installedPluginMetaList, isEqual);
   const { showDalle } = useServerConfigStore(featureFlagsSelectors);
   const builtinList = useToolStore(builtinToolSelectors.metaList(showDalle), isEqual);

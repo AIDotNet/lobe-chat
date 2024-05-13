@@ -144,7 +144,7 @@ interface DataImporterProps {
   onFinishImport?: () => void;
 }
 const DataImporter = memo<DataImporterProps>(({ children, onFinishImport }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any
   const { importConfig } = useImportConfig();
   const [duration, setDuration] = useState(0);
   const [importState, setImportState] = useState(ImportState.Start);

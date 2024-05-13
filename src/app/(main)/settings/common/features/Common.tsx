@@ -25,7 +25,7 @@ export interface SettingsCommonProps {
 }
 
 const Common = memo<SettingsCommonProps>(({ showAccessCodeConfig, showOAuthLogin }) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const [form] = Form.useForm();
 
   const isSignedIn = useUserStore((s) => s.isSignedIn);

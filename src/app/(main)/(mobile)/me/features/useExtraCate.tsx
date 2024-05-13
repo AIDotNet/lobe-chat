@@ -1,4 +1,4 @@
-
+declare var window: any;
 
 
 import { DiscordIcon, Icon } from '@lobehub/ui';

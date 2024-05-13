@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import ModelSwitchPanel from '@/features/ModelSwitchPanel';
 
 const ModelSwitch = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any;
 
   return (
     <ModelSwitchPanel>

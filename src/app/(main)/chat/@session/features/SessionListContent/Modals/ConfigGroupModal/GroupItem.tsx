@@ -23,7 +23,7 @@ const useStyles = createStyles(({ css }) => ({
 }));
 
 const GroupItem = memo<SessionGroupItem>(({ id, name }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any;
   const { styles } = useStyles();
   const { message, modal } = App.useApp();
 

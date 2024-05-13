@@ -24,7 +24,7 @@ const PluginTag = memo<PluginTagProps>(({ plugins }: any) => {
 
   if (plugins.length === 0) return null;
 
-  const items: MenuProps['items'] = plugins.map((id) => {
+  const items: MenuProps['items'] = plugins.map((id:any) => {
     const item = list.find((i) => i.identifier === id);
     const isDeprecated = !pluginHelpers.getPluginTitle(item?.meta);
     const avatar = isDeprecated ? '♻️' : pluginHelpers.getPluginAvatar(item?.meta);

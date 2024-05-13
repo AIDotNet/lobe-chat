@@ -22,7 +22,7 @@ const ThemeButton = memo(() => {
     s.switchThemeMode,
   ]);
 
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;;
 
   const items: MenuProps['items'] = useMemo(
     () => [

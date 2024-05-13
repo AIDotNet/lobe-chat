@@ -18,7 +18,7 @@ const ThemeSwatchesPrimary = memo(() => {
 
   const handleSelect = (v: any) => {
     const name = findCustomThemeName('primary', v) as PrimaryColors;
-    setSettings({ primaryColor: name || '' });
+    setSettings({ primaryColor: name  });
   };
 
   return (

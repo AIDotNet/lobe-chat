@@ -9,7 +9,7 @@ import { pluginHelpers } from '@/store/tool';
 import { LobeToolCustomPlugin } from '@/types/tool/plugin';
 
 const PluginPreview = memo<{ form: FormInstance }>(({ form }) => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;;
 
   const plugin: LobeToolCustomPlugin = AForm.useWatch([], form);
   const meta = plugin?.manifest?.meta;

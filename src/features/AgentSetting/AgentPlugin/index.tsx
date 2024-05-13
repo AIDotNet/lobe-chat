@@ -22,7 +22,7 @@ import LocalPluginItem from './LocalPluginItem';
 import PluginAction from './PluginAction';
 
 const AgentPlugin = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
 
   const [showStore, setShowStore] = useState(false);
 
@@ -127,7 +127,7 @@ const AgentPlugin = memo(() => {
     <Center padding={40}>
       <Empty
         description={
-          <Trans i18nKey={'plugin.empty'} ns={'setting'}>
+          <Trans  ns={'setting'}>
             暂无安装插件，
             <Typography.Link
               href={'/'}

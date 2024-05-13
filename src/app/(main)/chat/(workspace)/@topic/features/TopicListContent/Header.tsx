@@ -14,7 +14,7 @@ import { topicSelectors } from '@/store/chat/selectors';
 import TopicSearchBar from './TopicSearchBar';
 
 const Header = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any;
   const [topicLength, removeUnstarredTopic, removeAllTopic] = useChatStore((s) => [
     topicSelectors.currentTopicLength(s),
     s.removeUnstarredTopic,

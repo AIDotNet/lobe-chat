@@ -27,7 +27,7 @@ const Preview = memo<FieldType & { title?: string }>(
       sessionMetaSelectors.currentAgentBackgroundColor(s),
     ]);
 
-    const { t } = useTranslation('chat');
+    const { t } = useTranslation('chat')as any
     const { styles } = useStyles(withBackground);
 
     const displayTitle = isInbox ? t('inbox.title') : title;

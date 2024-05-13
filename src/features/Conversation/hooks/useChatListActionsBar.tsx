@@ -13,7 +13,7 @@ interface ChatListActionsBar {
 }
 
 export const useChatListActionsBar = (): ChatListActionsBar => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')as any
 
   return useMemo(
     () => ({

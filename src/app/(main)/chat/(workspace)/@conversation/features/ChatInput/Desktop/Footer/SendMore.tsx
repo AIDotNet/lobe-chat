@@ -28,7 +28,7 @@ const useStyles = createStyles(({ css, prefixCls }) => {
 const isMac = isMacOS();
 
 const SendMore = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any;
 
   const { styles } = useStyles();
 

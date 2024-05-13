@@ -21,7 +21,7 @@ export interface UpgradeButtonProps {
 
 const UpgradeButton = memo<UpgradeButtonProps>(
   ({ setUpgradeStatus, upgradeStatus, state, setError, primary = true, children }) => {
-    const { t } = useTranslation('migration');
+    const { t } = useTranslation('migration')as any;
 
     const refreshSession = useSessionStore((s) => s.refreshSessions);
     const [refreshMessages, refreshTopic] = useChatStore((s) => [

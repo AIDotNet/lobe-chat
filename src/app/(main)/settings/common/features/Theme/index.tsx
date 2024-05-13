@@ -22,7 +22,7 @@ import { ThemeSwatchesNeutral, ThemeSwatchesPrimary } from './ThemeSwatches';
 type SettingItemGroup = ItemGroup;
 
 const Theme = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const [form] = Form.useForm();
   const settings = useUserStore(settingsSelectors.currentSettings, isEqual);
   const [setThemeMode, setSettings] = useUserStore((s) => [s.switchThemeMode, s.setSettings]);

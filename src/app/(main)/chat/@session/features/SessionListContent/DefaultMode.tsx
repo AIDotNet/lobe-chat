@@ -17,7 +17,7 @@ import ConfigGroupModal from './Modals/ConfigGroupModal';
 import RenameGroupModal from './Modals/RenameGroupModal';
 
 const DefaultMode = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
 
   const [activeGroupId, setActiveGroupId] = useState<string>();
   const [renameGroupModalOpen, setRenameGroupModalOpen] = useState(false);

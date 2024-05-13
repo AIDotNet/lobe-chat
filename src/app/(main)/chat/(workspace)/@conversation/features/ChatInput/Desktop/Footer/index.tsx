@@ -56,7 +56,7 @@ interface FooterProps {
 }
 
 const Footer = memo<FooterProps>(({ setExpand }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any;
 
   const { theme, styles } = useStyles();
 

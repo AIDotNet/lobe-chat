@@ -31,7 +31,7 @@ import { authSelectors } from '@/store/user/selectors';
 
 export const useMenu = () => {
   const router = useQueryRoute();
-  const { t } = useTranslation(['common', 'setting', 'auth']);
+  const { t } = useTranslation(['common', 'setting', 'auth']) as any;
   const isSignedIn = useUserStore(authSelectors.isLoginWithAuth);
 
   const settings: MenuProps['items'] = [

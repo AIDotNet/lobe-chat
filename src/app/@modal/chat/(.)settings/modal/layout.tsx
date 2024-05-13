@@ -21,7 +21,7 @@ const CategoryContent = dynamic(() => import('./features/CategoryContent'), {
 });
 
 const Layout = memo<PropsWithChildren>(({ children }) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const id = useSessionStore((s) => s.activeId);
   const config = useAgentStore(agentSelectors.currentAgentConfig, isEqual);
   const meta = useSessionStore(sessionMetaSelectors.currentAgentMeta, isEqual);

@@ -13,7 +13,7 @@ interface ExperimentAlertProps {
   mobile?: boolean;
 }
 const ExperimentAlert = memo<ExperimentAlertProps>(({ mobile }) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const [hideSyncAlert, updatePreference] = useUserStore((s) => [
     preferenceSelectors.hideSyncAlert(s),
     s.updatePreference,

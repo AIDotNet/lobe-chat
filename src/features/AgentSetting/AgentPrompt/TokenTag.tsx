@@ -10,7 +10,7 @@ import { modelProviderSelectors } from '@/store/user/selectors';
 import { useStore } from '../store';
 
 const Tokens = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any;
   const [systemRole, model] = useStore((s) => [s.config.systemRole, s.config.model]);
   const systemTokenCount = useTokenCount(systemRole);
 

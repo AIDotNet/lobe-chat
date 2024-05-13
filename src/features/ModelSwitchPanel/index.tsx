@@ -1,20 +1,10 @@
-import { Icon } from '@lobehub/ui';
 import { Dropdown } from 'antd';
 import { createStyles } from 'antd-style';
-import isEqual from 'fast-deep-equal';
-import { LucideArrowRight } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import { PropsWithChildren, memo, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Flexbox } from 'react-layout-kit';
-
 import { ModelItemRender, ProviderItemRender } from '@/components/ModelSelect';
 import { useAgentStore } from '@/store/agent';
 import { agentSelectors } from '@/store/agent/slices/chat';
-import { useUserStore } from '@/store/user';
-import { modelProviderSelectors } from '@/store/user/selectors';
-import { ModelProviderCard } from '@/types/llm';
-import { withBasePath } from '@/utils/basePath';
 import { GetChatApplicationsList } from '@/services/ChatApplicationService';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
@@ -40,9 +30,9 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
 
 let models = [];
 const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
-  const { t } = useTranslation('components');
+  const { t } = useTranslation('components') as any;
   const { styles, theme } = useStyles();
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([] as any[]);
   const [model, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentModel(s),
     s.updateAgentConfig,
@@ -55,7 +45,7 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
         models = res.result;
 
         // 增加functionCall = true
-        models = models.map((model) => {
+        models = models.map((model:any) => {
           return {
             ...model,
             functionCall: true,
@@ -82,7 +72,7 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
         updateAgentConfig({ model: provider.chatModels[0].name, provider: provider.id });
       }
 
-      const items = provider.chatModels.map((model) => ({
+      const items = provider.chatModels.map((model:any) => ({
         key: model.name,
         label: <ModelItemRender {...model} />,
         onClick: () => {

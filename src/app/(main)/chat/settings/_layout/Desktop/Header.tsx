@@ -10,7 +10,7 @@ import { pathString } from '@/utils/url';
 import HeaderContent from '../../features/HeaderContent';
 
 const Header = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const router = useRouter();
 
   return (

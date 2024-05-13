@@ -10,7 +10,7 @@ import { useChatStore } from '@/store/chat';
 import { useFileStore } from '@/store/file';
 
 const Clear = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const [clearMessage] = useChatStore((s) => [s.clearMessage]);
   const [clearImageList] = useFileStore((s) => [s.clearImageList]);
   const hotkeys = [META_KEY, ALT_KEY, CLEAN_MESSAGE_KEY].join('+');

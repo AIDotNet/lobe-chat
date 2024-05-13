@@ -15,7 +15,7 @@ interface PluginStoreProps {
   setOpen: (open: boolean) => void;
 }
 export const PluginStore = memo<PluginStoreProps>(({ setOpen, open }) => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;;
   const mobile = useServerConfigStore((s) => s.isMobile);
   const [listType] = useToolStore((s) => [s.listType]);
 

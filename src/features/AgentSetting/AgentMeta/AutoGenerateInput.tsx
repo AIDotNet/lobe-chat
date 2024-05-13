@@ -13,7 +13,7 @@ export interface AutoGenerateInputProps extends InputProps {
 
 const AutoGenerateInput = memo<AutoGenerateInputProps>(
   ({ loading, onGenerate, canAutoGenerate, ...props }) => {
-    const { t } = useTranslation('common');
+    const { t } = useTranslation('common') as any;
     const theme = useTheme();
 
     return (

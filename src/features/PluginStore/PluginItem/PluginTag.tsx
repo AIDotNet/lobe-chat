@@ -40,7 +40,7 @@ interface PluginTagProps extends Pick<InstallPluginMeta, 'author' | 'type'> {
 }
 
 const PluginTag = memo<PluginTagProps>(({ showIcon = true, author, type, showText = true }) => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;;
   const { styles, cx } = useStyles();
   const isCustom = type === 'customPlugin';
   const isOfficial = author === 'AIDotNet';

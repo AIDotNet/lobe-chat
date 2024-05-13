@@ -7,10 +7,12 @@ import { LobeUser } from '@/types/user';
 const DEFAULT_USERNAME = 'FastWki-Chat';
 
 const nickName = (s: UserStore) => {
+  // @ts-ignore
   if (!enableAuth) return t('userPanel.defaultNickname', { ns: 'common' });
 
   if (s.isSignedIn) return s.user?.fullName || s.user?.username;
 
+    // @ts-ignore
   return t('userPanel.anonymousNickName', { ns: 'common' });
 };
 

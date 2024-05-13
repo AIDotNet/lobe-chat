@@ -15,7 +15,7 @@ interface ToolBarProps {
 }
 
 const ToolBar = memo<ToolBarProps>(({ content, messageId }) => {
-  const { t } = useTranslation('tool');
+  const { t } = useTranslation('tool') as any;;
   const generateImageFromPrompts = useChatStore((s) => s.generateImageFromPrompts);
   const isLoading = useChatStore(chatToolSelectors.isGeneratingDallEImage);
 

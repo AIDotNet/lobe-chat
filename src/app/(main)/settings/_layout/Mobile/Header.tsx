@@ -12,7 +12,7 @@ import { SettingsTabs } from '@/store/global/initialState';
 import { mobileHeaderSticky } from '@/styles/mobileHeader';
 
 const Header = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
 
   const router = useRouter();
   const activeSettingsKey = useActiveSettingsKey();

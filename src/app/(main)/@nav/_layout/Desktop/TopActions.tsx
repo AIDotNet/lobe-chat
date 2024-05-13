@@ -14,8 +14,8 @@ export interface TopActionProps {
 }
 
 const TopActions = memo<TopActionProps>(({ tab }) => {
-  const { t } = useTranslation('common');
-  const [items, setItems] = useState([]);
+  const { t } = useTranslation('common')as any;
+  const [items, setItems] = useState([] as any[]);
   const switchToApp = useGlobalStore((s) => s.switchToApp);
   const switchToFunctionCall = useGlobalStore((s) => s.switchToFunctionCall);
   const switchToWiki = useGlobalStore((s) => s.switchToWiki);

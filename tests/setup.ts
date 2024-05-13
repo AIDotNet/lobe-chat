@@ -1,4 +1,5 @@
 /* eslint-disable import/newline-after-import,import/first */
+declare var window: any;
 import '@testing-library/jest-dom';
 import { theme } from 'antd';
 // mock indexedDB to test with dexie

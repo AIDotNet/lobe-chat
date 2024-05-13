@@ -18,7 +18,7 @@ const ModelIcon = memo<ModelProviderIconProps>(({ model: originModel, size = 12 
   if (model.includes('gpt-3')) return <OpenAI.Avatar size={size} type={'gpt3'} />;
   if (model.includes('gpt-4')) return <OpenAI.Avatar size={size} type={'gpt4'} />;
 
-  return <OpenAI.Avatar size={size} type={model} />;
+  return <OpenAI.Avatar size={size} type={model as any} />;
 });
 
 export default ModelIcon;

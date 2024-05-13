@@ -12,8 +12,6 @@ const FunctionCallWrapper = styled.div`
     width: 100%;
 `
 
-
-
 export default function DesktopLayout() {
     const [keyword, setKeyword] = useState('');
     const router = useRouter();

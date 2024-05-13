@@ -6,7 +6,7 @@ import { Flexbox } from 'react-layout-kit';
 import UserInfo from '@/features/User/UserInfo';
 
 const UserLoginOrSignup = memo<{ onClick: () => void }>(({ onClick }) => {
-  const { t } = useTranslation('auth');
+  const { t } = useTranslation('auth') as any;;
 
   return (
     <>

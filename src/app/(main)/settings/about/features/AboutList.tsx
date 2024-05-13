@@ -57,7 +57,7 @@ const useStyles = createStyles(({ css, token, responsive, isDarkMode }) => ({
 
 const AboutList = memo(() => {
   const { styles } = useStyles();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common') as any;
 
   const items = [
     {

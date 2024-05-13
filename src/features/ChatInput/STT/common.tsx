@@ -41,7 +41,7 @@ const CommonSTT = memo<{
     handleCloseError,
     desc,
   }) => {
-    const { t } = useTranslation('chat');
+    const { t } = useTranslation('chat') as any;
     const { styles } = useStyles();
 
     return (

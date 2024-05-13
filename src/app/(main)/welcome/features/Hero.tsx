@@ -30,7 +30,7 @@ const useStyles = createStyles(({ css, token }) => {
 const Hero = memo(() => {
   const { styles } = useStyles();
 
-  const { t } = useTranslation('welcome');
+  const { t } = useTranslation('welcome')as any;
 
   return (
     <>

@@ -10,7 +10,7 @@ import { pluginSelectors } from '@/store/tool/selectors';
 const APIs = memo<{
   id: string;
 }>(({ id }) => {
-  const { t } = useTranslation('plugin');
+  const { t } = useTranslation('plugin') as any;
   const pluginManifest = useToolStore(pluginSelectors.getPluginManifestById(id), isEqual);
 
   if (!pluginManifest?.api) return <Empty />;

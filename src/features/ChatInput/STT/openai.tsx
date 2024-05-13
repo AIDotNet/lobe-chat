@@ -49,7 +49,7 @@ const useOpenaiSTT = (config: STTConfig) => {
 
 const OpenaiSTT = memo<{ mobile?: boolean }>(({ mobile }) => {
   const [error, setError] = useState<ChatMessageError>();
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any;
 
   const [loading, updateInputMessage] = useChatStore((s) => [
     chatSelectors.isAIGenerating(s),

@@ -1,6 +1,7 @@
 "use client"
+
 import { Form, Input } from "@lobehub/ui";
-import { useEffect, useRef, useState } from "react";
+import {  useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import { Button, message } from 'antd';
@@ -53,7 +54,7 @@ export default function CreateFunctionCall() {
             }
         }
         // 判断parameters是否有重复的key
-        const keys = functionCall.parameters.map((item) => item.key);
+        const keys = functionCall.parameters.map((item: { key: any; }) => item.key);
         const set = new Set(keys);
         if (keys.length !== set.size) {
             message.error('参数名不能重复');
@@ -99,7 +100,7 @@ export default function CreateFunctionCall() {
             <SInput
                 value={functionCall.name}
                 onChange={(e: any) => {
-                    setFunctionCall((functionCall) => {
+                    setFunctionCall((functionCall: any) => {
                         return {
                             ...functionCall,
                             name: e.target.value
@@ -111,7 +112,7 @@ export default function CreateFunctionCall() {
             <SInput
                 value={functionCall.description}
                 onChange={(e: any) => {
-                    setFunctionCall((functionCall) => {
+                    setFunctionCall((functionCall: any) => {
                         return {
                             ...functionCall,
                             description: e.target.value
@@ -122,7 +123,7 @@ export default function CreateFunctionCall() {
             <SInput
                 value={functionCall.main}
                 onChange={(e: any) => {
-                    setFunctionCall((functionCall) => {
+                    setFunctionCall((functionCall: any) => {
                         return {
                             ...functionCall,
                             main: e.target.value
@@ -154,7 +155,7 @@ export default function CreateFunctionCall() {
                         }
                     }
                     // 添加Function参数描述
-                    setFunctionCall((functionCall) => {
+                    setFunctionCall((functionCall: { parameters: string | any[]; }) => {
                         return {
                             ...functionCall,
                             parameters: functionCall.parameters.concat({
@@ -169,7 +170,7 @@ export default function CreateFunctionCall() {
             </SButton>
             {
                 // 渲染parametersList
-                functionCall.parameters.map((item, index) => {
+                functionCall.parameters.map((item: any, index: any) => {
                     return (
                         <div key={index} style={{
                             display: 'flex',
@@ -179,7 +180,7 @@ export default function CreateFunctionCall() {
                             <SInput size='large'
                                 value={item.key}
                                 onChange={(e: any) => {
-                                    setFunctionCall((functionCall) => {
+                                    setFunctionCall((functionCall: { parameters: any; }) => {
                                         const parametersList = functionCall.parameters;
                                         parametersList[index].key = e.target.value;
                                         return {
@@ -192,7 +193,7 @@ export default function CreateFunctionCall() {
                             <SInput size='large'
                                 value={item.value}
                                 onChange={(e: any) => {
-                                    setFunctionCall((functionCall) => {
+                                    setFunctionCall((functionCall: { parameters: any; }) => {
                                         const parametersList = functionCall.parameters;
                                         parametersList[index].value = e.target.value;
                                         return {
@@ -203,7 +204,7 @@ export default function CreateFunctionCall() {
                                 }}
                                 placeholder="请输入参数描述" />
                             <Button onClick={() => {
-                                setFunctionCall((functionCall) => {
+                                setFunctionCall((functionCall: { parameters: any; }) => {
                                     const parametersList = functionCall.parameters;
                                     parametersList.splice(index, 1);
                                     return {

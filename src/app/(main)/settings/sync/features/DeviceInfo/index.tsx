@@ -54,7 +54,7 @@ interface DeviceCardProps {
 
 const DeviceCard = memo<DeviceCardProps>(({ browser, os }) => {
   const { styles } = useStyles();
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
 
   return (
     <Flexbox

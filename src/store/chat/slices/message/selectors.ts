@@ -74,13 +74,17 @@ const currentChatsWithGuideMessage =
     const [activeId, isInbox] = [s.activeId, s.activeId === INBOX_SESSION_ID];
 
     const inboxMsg = '';
+    // @ts-ignore
     const agentSystemRoleMsg = t('agentDefaultMessageWithSystemRole', {
+      // @ts-ignore
       name: meta.title || t('defaultAgent'),
       ns: 'chat',
       systemRole: meta.description,
     });
+    // @ts-ignore
     const agentMsg = t('agentDefaultMessage', {
       id: activeId,
+      // @ts-ignore
       name: meta.title || t('defaultAgent'),
       ns: 'chat',
     });

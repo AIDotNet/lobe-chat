@@ -14,7 +14,7 @@ export interface AutoGenerateInputProps extends SelectProps {
 
 const AutoGenerateSelect = memo<AutoGenerateInputProps>(
   ({ loading, onGenerate, value, canAutoGenerate, ...props }) => {
-    const { t } = useTranslation('common');
+    const { t } = useTranslation('common') as any;
     const theme = useTheme();
 
     return (

@@ -13,7 +13,7 @@ import { sessionMetaSelectors, sessionSelectors } from '@/store/session/selector
 import Tags from './Tags';
 
 const Main = memo(() => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat') as any
 
   const [init, isInbox, title, description, avatar, backgroundColor] = useSessionStore((s) => [
     sessionSelectors.isSomeSessionActive(s),

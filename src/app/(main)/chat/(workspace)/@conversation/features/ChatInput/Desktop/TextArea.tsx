@@ -37,7 +37,7 @@ interface InputAreaProps {
 }
 
 const InputArea = memo<InputAreaProps>(({ setExpand }) => {
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any;
   const { styles } = useStyles();
   const ref = useRef<TextAreaRef>(null);
   const isChineseInput = useRef(false);

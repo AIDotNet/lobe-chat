@@ -73,7 +73,7 @@ interface ModelInfoTagsProps extends ChatModelCard {
 
 export const ModelInfoTags = memo<ModelInfoTagsProps>(
   ({ directionReverse, placement = 'right', ...model }) => {
-    const { t } = useTranslation('components');
+    const { t } = useTranslation('components')as any;
     const { styles, cx } = useStyles();
 
     return (
@@ -156,7 +156,7 @@ interface ProviderItemRenderProps {
 }
 
 export const ProviderItemRender = memo<ProviderItemRenderProps>(({ provider }) => {
-  const { t } = useTranslation('modelProvider');
+  const { t } = useTranslation('modelProvider')as any;
 
   return (
     <Flexbox align={'center'} gap={4} horizontal>

@@ -12,7 +12,7 @@ import { useSessionStore } from '@/store/session';
 import SubmitAgentButton from './SubmitAgentButton';
 
 export const HeaderContent = memo<{ mobile?: boolean; modal?: boolean }>(({ modal }) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const id = useSessionStore((s) => s.activeId);
 
   const mobile = useServerConfigStore((s) => s.isMobile);

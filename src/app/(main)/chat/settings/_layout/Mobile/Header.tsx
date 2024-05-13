@@ -10,7 +10,7 @@ import { mobileHeaderSticky } from '@/styles/mobileHeader';
 import HeaderContent from '../../features/HeaderContent';
 
 const Header = memo(() => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const router = useQueryRoute();
 
   return (

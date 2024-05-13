@@ -19,8 +19,8 @@ interface ProviderApiKeyFormProps {
 
 const ProviderApiKeyForm = memo<ProviderApiKeyFormProps>(
   ({ provider, avatar, showEndpoint = false, apiKeyPlaceholder }) => {
-    const { t } = useTranslation('modelProvider');
-    const { t: errorT } = useTranslation('error');
+    const { t } = useTranslation('modelProvider')as any
+    const { t: errorT } = useTranslation('error') as any;
     const [showProxy, setShow] = useState(false);
 
     const [apiKey, proxyUrl, setConfig] = useUserStore((s) => [

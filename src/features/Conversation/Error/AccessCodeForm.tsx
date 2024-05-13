@@ -14,7 +14,7 @@ interface AccessCodeFormProps {
 }
 
 const AccessCodeForm = memo<AccessCodeFormProps>(({ id }) => {
-  const { t } = useTranslation('error');
+  const { t } = useTranslation('error')as any
   const [password, setSettings] = useUserStore((s) => [
     settingsSelectors.currentSettings(s).password,
     s.setSettings,

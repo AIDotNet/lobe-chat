@@ -12,7 +12,7 @@ interface UseCategoryOptions {
 }
 
 export const useCategory = ({ mobile }: UseCategoryOptions = {}) => {
-  const { t } = useTranslation('setting');
+  const { t } = useTranslation('setting') as any;
   const { enableWebrtc, showLLM } = useServerConfigStore(featureFlagsSelectors);
 
   const iconSize = mobile ? { fontSize: 20 } : undefined;

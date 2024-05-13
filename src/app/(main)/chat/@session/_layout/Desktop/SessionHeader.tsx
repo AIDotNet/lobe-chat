@@ -27,7 +27,7 @@ export const useStyles = createStyles(({ css, token }) => ({
 
 const Header = memo(() => {
   const { styles } = useStyles();
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('chat')as any
   const [createSession] = useSessionStore((s) => [s.createSession]);
   const { enableWebrtc, showCreateSession } = useServerConfigStore(featureFlagsSelectors);
 

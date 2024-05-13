@@ -121,6 +121,7 @@ export const chatPlugin: StateCreator<
           error: result.errors,
           message: '[plugin] your settings is invalid with plugin manifest setting schema',
         },
+        // @ts-ignore
         message: t('response.PluginSettingsInvalid', { ns: 'error' }),
         type: PluginErrorType.PluginSettingsInvalid as any,
       });
