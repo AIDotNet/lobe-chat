@@ -32,6 +32,13 @@ const RootLayout = async ({ children, modal }: RootLayoutProps) => {
         </GlobalProvider>
         <Analytics />
         <SpeedInsights />
+        {/* 将环境变量插入到页面window对象中 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.FAST_API_URL = '${process.env.FAST_API_URL}';
+            `,
+          }}
+        />
       </body>
     </html>
   );

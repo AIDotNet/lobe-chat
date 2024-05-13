@@ -7,6 +7,7 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 WORKDIR /app
+COPY .env.local .env.local
 
 RUN pnpm add sharp
 

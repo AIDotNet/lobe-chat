@@ -126,7 +126,10 @@ const Login = memo(() => {
                     </Button>
                 </div>
                 <FunctionTools>
-                    <span onClick={() => []}>
+                    <span onClick={() => {
+                        if (typeof window === 'undefined') return;
+                        window.location.href = '/register';
+                    }}>
                         注册账号
                     </span>
                 </FunctionTools>

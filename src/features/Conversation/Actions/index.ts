@@ -38,7 +38,7 @@ export const useActionsClick = (): OnActionsClick => {
   const { message } = App.useApp();
 
   return useCallback<OnActionsClick>(async (action, { id, content, error }) => {
-    switch (action.key) {
+    switch (action?.key) {
       case 'copy': {
         await copyMessage(id, content);
         message.success(t('copySuccess', { defaultValue: 'Copy Success' }));

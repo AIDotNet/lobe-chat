@@ -32,13 +32,13 @@ const MobileChatInput = memo(() => {
         width: '100%',
         zIndex: 101,
       }}
-      textAreaLeftAddons={<STT mobile />}
+      // textAreaLeftAddons={<STT mobile />}
       textAreaRightAddons={
         <MobileChatSendButton loading={loading} onSend={onSend} onStop={onStop} />
       }
       topAddons={
         <>
-          <Files />
+          {/* <Files /> */}
           <ActionBar mobile padding={'0 8px'} rightAreaStartRender={<SaveTopic mobile />} />
         </>
       }

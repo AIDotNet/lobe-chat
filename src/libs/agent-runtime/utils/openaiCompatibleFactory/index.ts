@@ -77,7 +77,11 @@ export const LobeOpenAICompatibleFactory = ({
 
         const response = await this.client.chat.completions.create(postPayload, {
           // https://github.com/AIDotNet/lobe-chat/pull/318
-          headers: { Accept: '*/*' },
+          headers: { 
+            Accept: '*/*',
+            applicationId: payload.applicationId,
+            sharedId: payload.sharedId,
+          },
           signal: options?.signal,
         });
 

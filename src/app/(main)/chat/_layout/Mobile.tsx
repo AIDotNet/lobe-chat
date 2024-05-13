@@ -23,14 +23,6 @@ const Layout = memo<LayoutProps>(({ children, session }) => {
 
   return (
     <>
-      {/* <Flexbox
-        className={styles.main}
-        height="100%"
-        style={!showMobileWorkspace ? { display: 'none' } : undefined}
-        width="100%"
-      >
-        {session}
-      </Flexbox> */}
       <Flexbox
         className={styles.main}
         height="100%"

@@ -94,7 +94,7 @@ const TopActions = memo<TopActionProps>(({ tab }) => {
             }}
           >
             <ActionIcon
-              active={tab === item.key}
+              active={tab === item?.key}
               icon={item.icon}
               placement={'right'}
               size="large"

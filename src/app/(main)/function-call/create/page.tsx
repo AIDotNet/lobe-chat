@@ -47,7 +47,7 @@ export default function CreateFunctionCall() {
     function onSumit() {
         // 判断parametersList是否有空的参数
         for (let i = 0; i < functionCall.parameters.length; i++) {
-            if (functionCall.parameters[i].key === '' || functionCall.parameters[i].value === '') {
+            if (functionCall.parameters[i]?.key === '' || functionCall.parameters[i].value === '') {
                 message.error('参数名和参数描述不能为空');
                 return;
             }

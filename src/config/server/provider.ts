@@ -1,5 +1,7 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix , typescript-sort-keys/interface */
 
+import { FAST_API_URL } from "@/const/trace";
+
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace NodeJS {
@@ -46,7 +48,7 @@ export const getProviderConfig = () => {
 
   return {
     API_KEY_SELECT_MODE: process.env.API_KEY_SELECT_MODE,
-
+    FAST_API_URL: FAST_API_URL,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
     OPENAI_PROXY_URL: process.env.OPENAI_PROXY_URL,
     OPENAI_MODEL_LIST: process.env.OPENAI_MODEL_LIST || process.env.CUSTOM_MODELS,
