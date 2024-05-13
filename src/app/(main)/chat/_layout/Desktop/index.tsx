@@ -8,6 +8,7 @@ import SessionPanel from './SessionPanel';
 
 const Layout = ({ children, session }: LayoutProps) => {
 
+  if (typeof window === 'undefined') return;
   // 获取当前query中的sharedId
   const query = new URLSearchParams(window.location.search);
   const sharedId = query.get('sharedId');

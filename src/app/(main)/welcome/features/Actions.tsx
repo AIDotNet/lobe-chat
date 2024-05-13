@@ -22,7 +22,7 @@ const Actions = memo<{ mobile?: boolean }>(({ mobile }) => {
       </Link>
       <Button
         block={mobile}
-        onClick={() => router.push('/chat')}
+        onClick={() => router.push('/app')}
         size={'large'}
         style={{ minWidth: 160 }}
         type={'primary'}

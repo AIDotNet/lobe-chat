@@ -40,6 +40,7 @@ class DataSync {
 
     // 开发时由于存在 fast refresh 全局实例会缓存在运行时中
     // 因此需要在每次重新连接时清理上一次的实例
+    if (typeof window === 'undefined') return;
     if (window.__ONLY_USE_FOR_CLEANUP_IN_DEV) {
       await this.cleanConnection(window.__ONLY_USE_FOR_CLEANUP_IN_DEV);
     }
@@ -75,6 +76,7 @@ class DataSync {
 
     // when fast refresh in dev, the provider will be cached in window
     // so we need to clean it in destory
+    if (typeof window === 'undefined') return;
     if (process.env.NODE_ENV === 'development') {
       window.__ONLY_USE_FOR_CLEANUP_IN_DEV = this.provider;
     }

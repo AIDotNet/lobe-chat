@@ -1,4 +1,4 @@
-import { Input, Modal } from "@lobehub/ui";
+import { Input, Modal, TextArea } from "@lobehub/ui";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
@@ -33,20 +33,21 @@ export default function UpdateFunctionCall({
     const monacoEl = useRef(null);
     useEffect(() => {
         if (visible) {
-            setEditor((editor) => {
-                // if (editor) return editor;
-                // 判断是否有monacoEl，如果没有就返回
-                if (!monacoEl.current) return editor;
+            if (typeof window === 'undefined') return;
+            // setEditor((editor) => {
+            //     // if (editor) return editor;
+            //     // 判断是否有monacoEl，如果没有就返回
+            //     if (!monacoEl.current) return editor;
 
-                const e = monaco.editor.create(monacoEl.current!, {
-                    value: value.content,
-                    language: 'javascript',
-                    theme: 'vs-dark',
-                    automaticLayout: true
-                });
+            //     const e = monaco.editor.create(monacoEl.current!, {
+            //         value: value.content,
+            //         language: 'javascript',
+            //         theme: 'vs-dark',
+            //         automaticLayout: true
+            //     });
 
-                return e;
-            });
+            //     return e;
+            // });
         }
 
         return () => editor?.dispose();
@@ -69,7 +70,7 @@ export default function UpdateFunctionCall({
             }
         }
         // 判断parameters是否有重复的key
-        const keys = functionCall.parameters.map((item:any) => item.key);
+        const keys = functionCall.parameters.map((item: any) => item.key);
         const set = new Set(keys);
         if (keys.length !== set.size) {
             message.error('参数名不能重复');
@@ -94,7 +95,7 @@ export default function UpdateFunctionCall({
     }
 
     return (
-        <Modal 
+        <Modal
             open={visible} title="创建函数调用"
             footer={null}
             width={'100%'}
@@ -103,7 +104,7 @@ export default function UpdateFunctionCall({
             <SInput
                 value={functionCall.name}
                 onChange={(e: any) => {
-                    setFunctionCall((functionCall:any) => {
+                    setFunctionCall((functionCall: any) => {
                         return {
                             ...functionCall,
                             name: e.target.value
@@ -115,7 +116,7 @@ export default function UpdateFunctionCall({
             <SInput
                 value={functionCall.description}
                 onChange={(e: any) => {
-                    setFunctionCall((functionCall:any) => {
+                    setFunctionCall((functionCall: any) => {
                         return {
                             ...functionCall,
                             description: e.target.value
@@ -126,7 +127,7 @@ export default function UpdateFunctionCall({
             <SInput
                 value={functionCall.main}
                 onChange={(e: any) => {
-                    setFunctionCall((functionCall:any) => {
+                    setFunctionCall((functionCall: any) => {
                         return {
                             ...functionCall,
                             main: e.target.value
@@ -138,7 +139,25 @@ export default function UpdateFunctionCall({
                 <span>
                     Function JS代码。
                 </span>
-                <div style={{
+                <TextArea
+                    value={functionCall.content}
+                    onChange={(e: any) => {
+                        setFunctionCall((functionCall: any) => {
+                            return {
+                                ...functionCall,
+                                content: e.target.value
+                            }
+                        });
+                    }}
+                    style={{
+                        height: '400px',
+                        width: '100%',
+                        border: '1px solid #e8e8e8',
+                        borderRadius: '5px',
+                        marginTop: '10px'
+                    }}
+                    />
+                {/* <div style={{
                     height: '400px',
                     width: '100%',
                     border: '1px solid #e8e8e8',
@@ -146,7 +165,7 @@ export default function UpdateFunctionCall({
                     marginTop: '10px'
                 }} ref={monacoEl}>
 
-                </div>
+                </div> */}
             </div>
             <SButton onClick={
                 () => {
@@ -158,7 +177,7 @@ export default function UpdateFunctionCall({
                         }
                     }
                     // 添加Function参数描述
-                    setFunctionCall((functionCall:any) => {
+                    setFunctionCall((functionCall: any) => {
                         return {
                             ...functionCall,
                             parameters: functionCall.parameters.concat({
@@ -173,7 +192,7 @@ export default function UpdateFunctionCall({
             </SButton>
             {
                 // 渲染parametersList
-                functionCall.parameters?.map((item:any, index:any) => {
+                functionCall.parameters?.map((item: any, index: any) => {
                     return (
                         <div key={index} style={{
                             display: 'flex',
@@ -183,7 +202,7 @@ export default function UpdateFunctionCall({
                             <SInput size='large'
                                 value={item.key}
                                 onChange={(e: any) => {
-                                    setFunctionCall((functionCall:any) => {
+                                    setFunctionCall((functionCall: any) => {
                                         const parametersList = functionCall.parameters;
                                         parametersList[index].key = e.target.value;
                                         return {
@@ -196,7 +215,7 @@ export default function UpdateFunctionCall({
                             <SInput size='large'
                                 value={item.value}
                                 onChange={(e: any) => {
-                                    setFunctionCall((functionCall:any) => {
+                                    setFunctionCall((functionCall: any) => {
                                         const parametersList = functionCall.parameters;
                                         parametersList[index].value = e.target.value;
                                         return {
@@ -207,7 +226,7 @@ export default function UpdateFunctionCall({
                                 }}
                                 placeholder="请输入参数描述" />
                             <Button onClick={() => {
-                                setFunctionCall((functionCall:any) => {
+                                setFunctionCall((functionCall: any) => {
                                     const parametersList = functionCall.parameters;
                                     parametersList.splice(index, 1);
                                     return {

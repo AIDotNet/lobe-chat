@@ -12,7 +12,7 @@ import TopActions from './TopActions';
 const Nav = memo(() => {
 
   // 获取当前query中的sharedId
-  if(typeof window === 'undefined' || !window){
+  if(typeof window === 'undefined'){
     return null;
   }
   const query = new URLSearchParams(window.location.search);

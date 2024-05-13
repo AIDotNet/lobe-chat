@@ -16,7 +16,7 @@ const Header = memo(() => {
   return (
     <MobileNavBar
       center={<MobileNavBarTitle title={t('header.session')} />}
-      onBackClick={() => router.push('/chat')}
+      onBackClick={() => router.push('/app')}
       right={<HeaderContent />}
       showBackButton
       style={mobileHeaderSticky}

@@ -18,6 +18,7 @@ class GitHubService {
       url: urlJoin(GITHUB, '/issues/new'),
     });
 
+    if (typeof window === 'undefined') return;
     window.open(url, '_blank');
   };
 }

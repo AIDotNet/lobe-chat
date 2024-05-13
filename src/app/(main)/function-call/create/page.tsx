@@ -1,7 +1,6 @@
 "use client"
-
-import { Form, Input } from "@lobehub/ui";
-import {  useEffect, useRef, useState } from "react";
+import { Form, Input, TextArea } from "@lobehub/ui";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import { Button, message } from 'antd';
@@ -22,18 +21,18 @@ export default function CreateFunctionCall() {
     const [editor, setEditor] = useState<monaco.editor.IStandaloneCodeEditor | null>(null);
     const router = useRouter();
     const monacoEl = useRef(null);
-    useEffect(() => {
+    // useEffect(() => {
+    //     if (typeof window === 'undefined') return;
+    //     const editor = monaco.editor.create(monacoEl.current!, {
+    //         value: ['function Test(x,y) {', '\treturn x+y;', '} '].join('\n'),
+    //         language: 'javascript',
+    //         theme: 'vs-dark',
+    //         automaticLayout: true,
+    //     })
+    //     setEditor(editor);
 
-        const editor = monaco.editor.create(monacoEl.current!, {
-            value: ['function Test(x,y) {', '\treturn x+y;', '} '].join('\n'),
-            language: 'javascript',
-            theme: 'vs-dark',
-            automaticLayout: true,
-        })
-        setEditor(editor);
-
-        return () => editor?.dispose();
-    }, []);
+    //     return () => editor?.dispose();
+    // }, []);
     const [functionCall, setFunctionCall] = useState<any>({
         name: '',
         description: '',
@@ -135,7 +134,26 @@ export default function CreateFunctionCall() {
                 <span>
                     Function JS代码。
                 </span>
-                <div style={{
+                <TextArea
+                    value={functionCall.content}
+                    onChange={(e: any) => {
+                        setFunctionCall((functionCall: any) => {
+                            return {
+                                ...functionCall,
+                                content: e.target.value
+                            }
+                        });
+                    }}
+                    style={{
+                        height: '400px',
+                        width: '100%',
+                        border: '1px solid #e8e8e8',
+                        borderRadius: '5px',
+                        marginTop: '10px'
+                    }}
+                    placeholder="请输入JS代码"
+                    />
+                {/* <div style={{
                     height: '400px',
                     width: '100%',
                     border: '1px solid #e8e8e8',
@@ -143,7 +161,7 @@ export default function CreateFunctionCall() {
                     marginTop: '10px'
                 }} id="monaco" ref={monacoEl}>
 
-                </div>
+                </div> */}
             </div>
             <SButton onClick={
                 () => {

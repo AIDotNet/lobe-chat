@@ -54,6 +54,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       url: AGENTS_INDEX_GITHUB_ISSUE,
     });
 
+    if (typeof window === 'undefined') return;
     window.open(url, '_blank');
   };
 

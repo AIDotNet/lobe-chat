@@ -124,6 +124,7 @@ export async function fetch(url: string, options: any) {
 
     // 如果是401，跳转到登录页
     if (response.status === 401) {
+      if (typeof window === 'undefined') return;
       window.location.href = '/auth-login';
     }
 
