@@ -99,6 +99,23 @@ export default memo((props: IReleaseApplicationProps) => {
                 })
 
                 items.push({
+                    key: '6',
+                    label: '复制微信公众号对接地址',
+                    onClick: async () => {
+                        let url = FAST_API_URL;
+                        if (!url) {
+                            url = location.origin;
+                        }
+                        // 删除最后的/
+                        if (url.endsWith('/')) {
+                            url = url.slice(0, url.length - 1);
+                        }
+                        copyToClipboard(url + "/api/v1/WeChatService/ReceiveMessage/" + item.id)
+                        message.success('复制成功');
+                    }
+                })
+
+                items.push({
                     key: '4',
                     label: '复制悬浮球接入地址',
                     onClick: async () => {
