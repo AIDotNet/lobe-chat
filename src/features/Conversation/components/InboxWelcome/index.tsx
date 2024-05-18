@@ -2,15 +2,16 @@
 
 import { FluentEmoji, Markdown } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import { useGreeting } from '@/hooks/useGreeting';
+import { useApplication, useGreeting } from '@/hooks/useGreeting';
 import { useServerConfigStore } from '@/store/serverConfig';
 
 import AgentsSuggest from './AgentsSuggest';
 import QuestionSuggest from './QuestionSuggest';
+import { GetChatApplications, GetChatShareApplication } from '@/services/ChatApplicationService';
 
 const useStyles = createStyles(({ css, responsive }) => ({
   container: css`
@@ -40,10 +41,12 @@ const useStyles = createStyles(({ css, responsive }) => ({
 }));
 
 const InboxWelcome = memo(() => {
-  const { t } = useTranslation('welcome')as any
+  const { t } = useTranslation('welcome') as any
   const { styles } = useStyles();
   const mobile = useServerConfigStore((s) => s.isMobile);
   const greeting = useGreeting();
+  const application = useApplication() as any;
+
 
   return (
     <Center padding={16} width={'100%'}>
@@ -53,7 +56,7 @@ const InboxWelcome = memo(() => {
           <h1 className={styles.title}>{greeting}</h1>
         </Flexbox>
         <Markdown className={styles.desc} variant={'chat'}>
-          {t('guide.defaultMessage')}
+          {application?.opener ?? t('guide.defaultMessage')}
         </Markdown>
         <AgentsSuggest mobile={mobile} />
         <QuestionSuggest mobile={mobile} />

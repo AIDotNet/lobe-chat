@@ -98,7 +98,7 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
 
   return (
     <Flexbox gap={8} width={'100%'}>
-      <Flexbox align={'center'} horizontal justify={'space-between'}>
+      {/* <Flexbox align={'center'} horizontal justify={'space-between'}>
         <div className={styles.title}>{t('guide.agents.title')}</div>
         <ActionIcon
           icon={RefreshCw}
@@ -106,10 +106,10 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
           size={{ blockSize: 24, fontSize: 14 }}
           title={t('guide.agents.replaceBtn')}
         />
-      </Flexbox>
-      <Grid gap={8} rows={2}>
+      </Flexbox> */}
+      {/* <Grid gap={8} rows={2}>
         {isLoading ? loadingCards : cards}
-      </Grid>
+      </Grid> */}
     </Flexbox>
   );
 });

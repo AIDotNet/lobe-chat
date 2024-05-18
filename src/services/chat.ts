@@ -3,7 +3,6 @@ import { produce } from 'immer';
 import { merge } from 'lodash-es';
 
 import { createErrorResponse } from '@/app/api/errorResponse';
-import { INBOX_GUIDE_SYSTEMROLE } from '@/const/guide';
 import { INBOX_SESSION_ID } from '@/const/session';
 import { DEFAULT_AGENT_CONFIG } from '@/const/settings';
 import { TracePayload, TraceTagMap } from '@/const/trace';
@@ -373,8 +372,7 @@ class ChatService {
       // if it's a welcome question, inject InboxGuide SystemRole
       const inboxGuideSystemRole =
         options?.isWelcomeQuestion &&
-        options?.trace?.sessionId === INBOX_SESSION_ID &&
-        INBOX_GUIDE_SYSTEMROLE;
+        options?.trace?.sessionId === INBOX_SESSION_ID 
 
       // Inject Tool SystemRole
       const hasTools = tools && tools?.length > 0;
