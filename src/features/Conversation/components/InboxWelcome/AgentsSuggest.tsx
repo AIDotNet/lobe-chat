@@ -10,7 +10,6 @@ import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import { useMarketStore } from '@/store/market';
 
 const { Paragraph } = Typography;
 
@@ -58,9 +57,6 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   const { t } = useTranslation('welcome')as any
 
   const [sliceStart, setSliceStart] = useState(0);
-  const useFetchAgentList = useMarketStore((s) => s.useFetchAgentList);
-  const { isLoading } = useFetchAgentList();
-  const agentList = useMarketStore((s) => s.agentList, isEqual);
   const { styles } = useStyles();
 
   const agentLength = mobile ? 2 : 4;
@@ -70,31 +66,6 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
       <Skeleton active avatar paragraph={{ rows: 2 }} title={false} />
     </Flexbox>
   ));
-
-  const cards = useMemo(
-    () =>
-      agentList.slice(sliceStart, sliceStart + agentLength).map((agent) => (
-        <Link href={`/market?agent=${agent.identifier}`} key={agent.identifier}>
-          <Flexbox className={styles.card} gap={8} horizontal>
-            <Avatar avatar={agent.meta.avatar} style={{ flex: 'none' }} />
-            <Flexbox gap={mobile ? 2 : 8} style={{ overflow: 'hidden', width: '100%' }}>
-              <Paragraph className={styles.cardTitle} ellipsis={{ rows: 1 }}>
-                {agent.meta.title}
-              </Paragraph>
-              <Paragraph className={styles.cardDesc} ellipsis={{ rows: mobile ? 1 : 2 }}>
-                {agent.meta.description}
-              </Paragraph>
-            </Flexbox>
-          </Flexbox>
-        </Link>
-      )),
-    [agentList, sliceStart],
-  );
-
-  const handleRefresh = () => {
-    if (!agentList) return;
-    setSliceStart(Math.floor((Math.random() * agentList.length) / 2));
-  };
 
   return (
     <Flexbox gap={8} width={'100%'}>

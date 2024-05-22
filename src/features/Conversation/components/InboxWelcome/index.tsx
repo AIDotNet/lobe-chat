@@ -11,7 +11,6 @@ import { useServerConfigStore } from '@/store/serverConfig';
 
 import AgentsSuggest from './AgentsSuggest';
 import QuestionSuggest from './QuestionSuggest';
-import { GetChatApplications, GetChatShareApplication } from '@/services/ChatApplicationService';
 
 const useStyles = createStyles(({ css, responsive }) => ({
   container: css`
