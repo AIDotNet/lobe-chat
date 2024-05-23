@@ -4,7 +4,6 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import PluginTag from '@/features/PluginStore/PluginItem/PluginTag';
 import { pluginHelpers } from '@/store/tool';
 import { LobeToolCustomPlugin } from '@/types/tool/plugin';
 
@@ -20,7 +19,6 @@ const PluginPreview = memo<{ form: FormInstance }>(({ form }) => {
     label: (
       <Flexbox align={'center'} gap={8} horizontal>
         {pluginHelpers.getPluginTitle(meta) || 'Plugin Title'}
-        <PluginTag type={'customPlugin'} />
       </Flexbox>
     ),
     minWidth: undefined,

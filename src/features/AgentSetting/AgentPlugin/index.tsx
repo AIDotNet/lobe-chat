@@ -9,8 +9,6 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import { FORM_STYLE } from '@/const/layoutTokens';
-import PluginStore from '@/features/PluginStore';
-import PluginTag from '@/features/PluginStore/PluginItem/PluginTag';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 import { pluginHelpers, useToolStore } from '@/store/tool';
 import { toolSelectors } from '@/store/tool/selectors';
@@ -55,7 +53,6 @@ const AgentPlugin = memo(() => {
       label: (
         <Flexbox align={'center'} gap={8} horizontal>
           {pluginHelpers.getPluginTitle(meta)}
-          <PluginTag author={author} type={type} />
         </Flexbox>
       ),
       minWidth: undefined,
@@ -154,7 +151,6 @@ const AgentPlugin = memo(() => {
 
   return (
     <>
-      <PluginStore open={showStore} setOpen={setShowStore} />
       <Form items={[plugin]} itemsType={'group'} variant={'pure'} {...FORM_STYLE} />
     </>
   );

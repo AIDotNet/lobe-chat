@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { useWorkspaceModal } from '@/app/(main)/chat/(workspace)/features/useWorkspaceModal';
-import PluginStore from '@/features/PluginStore';
 import { useAgentStore } from '@/store/agent';
 import { agentSelectors } from '@/store/agent/selectors';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
@@ -137,7 +136,6 @@ const Tools = memo(() => {
           title={t(enableFC ? 'tools.title' : 'tools.disabled')}
         />
       </Dropdown>
-      <PluginStore open={open} setOpen={setOpen} />
     </>
   );
 });
