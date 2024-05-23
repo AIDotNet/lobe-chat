@@ -1,12 +1,6 @@
 import { gerServerDeviceInfo, isMobileDevice } from '@/utils/responsive';
 
 import SettingsModal from './index';
-
-/**
- * @description: Settings Modal (intercepting route: /settings/modal )
- * @refs: https://github.com/AIDotNet/lobe-chat/discussions/2295#discussioncomment-9290942
- */
-
 const Page = () => {
   const isMobile = isMobileDevice();
   const { os, browser } = gerServerDeviceInfo();
