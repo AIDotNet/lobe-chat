@@ -119,7 +119,7 @@
     "@lobehub/chat-plugins-gateway": "^1.9.0",
     "@lobehub/icons": "^1.28.0",
     "@lobehub/tts": "^1.24.3",
-    "@lobehub/ui": "^1.149.2",
+    "@lobehub/ui": "1.149.2",
     "@neondatabase/serverless": "^0.9.4",
     "@next/third-parties": "^14.2.4",
     "@sentry/nextjs": "^7.118.0",
